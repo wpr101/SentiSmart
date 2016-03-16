@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Name Amigo - Sentiment Analysis</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1></meta>
+
+  <meta name="description" content="Sentiment Analysis and word density. Analyzed by machine learning algorithms that do opinion mining." />
+  
+  <!--COMMNENT: to not load a favicon-->
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <!--<link rel="stylesheet" href="/resources/demos/style.css">-->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+
+
+  <div data-role="main" class="ui-content">
+    <form method="post" action="/sentiment-analysis">
+        <textarea name="words" id="words" placeholder="Sentences:" required="true"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+  </div>
+ 
+ 
+</body>
+</html>
