@@ -2,13 +2,10 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, Response
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+import nltk
+#from nltk.book import text7
 
 app = Flask(__name__)
-
-@app.route('/')
-def index():
-    pass
-   
 
 @app.route('/sentiment', methods=['GET'])
 def Sentiment():

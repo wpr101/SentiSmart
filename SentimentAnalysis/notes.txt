@@ -1,0 +1,3 @@
+https://github.com/cjhutto/vaderSentiment/blob/master/vaderSentiment/vader_sentiment_lexicon.txt
+
+http://deeplearning.net/software_links/

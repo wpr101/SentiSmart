@@ -1,0 +1,36 @@
+wpr101@wpr101-SVS1512V1ES:~/Downloads/robomongo-0.9.0-rc6-linux-x86_64-98af4fc/bin$ ssh -L 27017:localhost:27017 78.46.99.40
+The authenticity of host '78.46.99.40 (78.46.99.40)' can't be established.
+ECDSA key fingerprint is SHA256:0NCHPO4u6+8xw7WxIcPPH3KB4AZ+wRLytrLifGY//4Y.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added '78.46.99.40' (ECDSA) to the list of known hosts.
+wpr101@78.46.99.40's password: 
+Permission denied, please try again.
+wpr101@78.46.99.40's password: 
+Permission denied, please try again.
+wpr101@78.46.99.40's password: 
+
+wpr101@wpr101-SVS1512V1ES:~/Downloads/robomongo-0.9.0-rc6-linux-x86_64-98af4fc/bin$ ssh -L 27017:localhost:27017 root@78.46.99.40
+root@78.46.99.40's password: 
+Welcome to Ubuntu 15.10 (GNU/Linux 4.2.0-27-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Tue Mar 15 19:26:04 2016 from 193.110.108.35
+root@Ubuntu-1510-wily-64-minimal ~ # channel 3: open failed: connect failed: Connection refused
+channel 3: open failed: connect failed: Connection refused
+channel 3: open failed: connect failed: Connection refused
+channel 3: open failed: connect failed: Connection refused
+^C
+root@Ubuntu-1510-wily-64-minimal ~ # ssh -L 27017:78.46.99.40:27017 root@78.46.99.40
+The authenticity of host '78.46.99.40 (78.46.99.40)' can't be established.
+ECDSA key fingerprint is SHA256:0NCHPO4u6+8xw7WxIcPPH3KB4AZ+wRLytrLifGY//4Y.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '78.46.99.40' (ECDSA) to the list of known hosts.
+root@78.46.99.40's password: 
+Welcome to Ubuntu 15.10 (GNU/Linux 4.2.0-27-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Sat Mar 19 19:37:25 2016 from 85.253.162.120
+root@Ubuntu-1510-wily-64-minimal ~ # 
+
+
