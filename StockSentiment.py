@@ -20,7 +20,7 @@ past_stocks = {'FB':[(date(2016, 11, 2), 5.7), (date(2016, 7, 27), 4.5),
 
 
 
-xl = pd.ExcelFile('IBD.xls')
+xl = pd.ExcelFile('Q4_2016/' + 'IBD.xls')
 print(xl.sheet_names)
 
 df = xl.parse('Stock list', skiprows=8)
