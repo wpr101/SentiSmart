@@ -78,6 +78,6 @@ def do_ml(ticker):
 
     return confidence
 
-do_ml('FB')
+do_ml('AAPL')
 
     
