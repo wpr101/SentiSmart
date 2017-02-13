@@ -21,6 +21,9 @@ symbol_list = df['Symbol'].tolist()
 
 df1 = df[['EstEPS', 'ActualEPS']]
 df1 = df1.astype(float)
+#sorted_actualEPS = df1.sort_values('ActualEPS')
+#print(sorted_actualEPS.head())
+
 ax = df1[['EstEPS','ActualEPS']].plot(kind='bar', title ="Jan17 Earnings", figsize=(15, 10), legend=True, fontsize=12)
 ax.set_xlabel("Companies", fontsize=12)
 ax.set_ylabel("Earnings Per Share", fontsize=12)

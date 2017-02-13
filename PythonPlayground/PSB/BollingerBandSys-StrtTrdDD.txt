@@ -1,0 +1,22 @@
+Start Trade Drawdown Analysis Of : BollingerBandSys : Max. ClsTrd Draw Down      30058
+-------------------------------------
+Probability of DD <     1502 is 0.074
+Probability of DD <     3005 is 0.074
+Probability of DD <     4509 is 0.088
+Probability of DD <     6014 is 0.088
+Probability of DD <     7520 is 0.103
+Probability of DD <     9027 is 0.103
+Probability of DD <    10535 is 0.103
+Probability of DD <    12044 is 0.338
+Probability of DD <    13554 is 0.353
+Probability of DD <    15065 is 0.353
+Probability of DD <    16577 is 0.368
+Probability of DD <    18090 is 0.368
+Probability of DD <    19604 is 0.368
+Probability of DD <    21119 is 0.382
+Probability of DD <    22635 is 0.382
+Probability of DD <    24151 is 0.426
+Probability of DD <    25669 is 0.426
+Probability of DD <    27188 is 0.441
+Probability of DD <    28708 is 0.441
+Probability of DD <    30229 is 1.000

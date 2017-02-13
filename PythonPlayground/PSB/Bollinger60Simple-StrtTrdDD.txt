@@ -1,0 +1,22 @@
+Start Trade Drawdown Analysis Of : Bollinger60Simple : Max. ClsTrd Draw Down      99595
+-------------------------------------
+Probability of DD <     4979 is 0.050
+Probability of DD <     9959 is 0.060
+Probability of DD <    14940 is 0.085
+Probability of DD <    19922 is 0.095
+Probability of DD <    24904 is 0.116
+Probability of DD <    29888 is 0.126
+Probability of DD <    34873 is 0.397
+Probability of DD <    39859 is 0.417
+Probability of DD <    44845 is 0.442
+Probability of DD <    49833 is 0.462
+Probability of DD <    54822 is 0.558
+Probability of DD <    59812 is 0.588
+Probability of DD <    64802 is 0.598
+Probability of DD <    69794 is 0.613
+Probability of DD <    74787 is 0.623
+Probability of DD <    79781 is 0.638
+Probability of DD <    84775 is 0.648
+Probability of DD <    89771 is 0.663
+Probability of DD <    94768 is 0.673
+Probability of DD <    99766 is 1.000
