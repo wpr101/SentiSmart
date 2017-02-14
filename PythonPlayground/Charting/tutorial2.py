@@ -2,13 +2,13 @@ import urllib2
 import time
 import datetime
 
-stocksToPull = 'AAPL','GOOGL','MSFT','CMG','AMZN','EBAY','TSLA'
+stocksToPull = 'AAPL','MSFT','CMG','AMZN','EBAY','TSLA'
 
 def pullData(stock):
     try:
         print 'Currently pulling',stock
         print str(datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S'))
-        urlToVisit = 'http://chartapi.finance.yahoo.com/instrument/1.0/'+stock+'/chartdata;type=quote;range=1y/csv'
+        urlToVisit = 'http://chartapi.finance.yahoo.com/instrument/1.0/'+stock+'/chartdata;type=quote;range=3y/csv'
         saveFileLine = stock+'.txt'
 
         try:

@@ -107,4 +107,41 @@ def visualize_data():
     plt.show()
     
 
-visualize_data()
+def loop_data():
+    df = pd.read_csv('stock_dfs/FB.csv')
+    #print(df.head())
+    dates = list(df['Date'])
+    open_prices = list(df['Open'])
+    high_prices = list(df['High'])
+    low_prices = list(df['Low'])
+    close_prices = list(df['Close'])
+    volumes = list(df['Volume'])
+    adj_closes = list(df['Adj Close'])
+    for i in range(len(dates)-1):
+        '''print ('Date', dates[i])
+        print ('High', high_prices[i])
+        print ('Low', low_prices[i])
+        print ('Close', close_prices[i])
+        print ('Volume', volumes[i])
+        print ('AdjClose', adj_closes[i])
+        print ("")'''
+        #check if there was over a 10% gain from one day to next
+        if ((adj_closes[i+1] / adj_closes[i]) > 1.10):
+
+            
+            gain = adj_closes[i+1] / adj_closes[i]
+            gain_decimal = gain - int(gain)
+            gain_decimal = gain_decimal * 100
+            
+            print('Gain of', '{0:.2f}'.format(gain_decimal) + '%')
+            print('Date', dates[i])
+            print('')
+
+        if (1 - (adj_closes[i+1] / adj_closes[i]) > .10):
+            print('Loss of', '{0:.2f}'.format(100 * (1 - (adj_closes[i+1] / adj_closes[i]))) + '%') 
+            print('Date', dates[i])
+            print('')
+        
+
+loop_data()
+
