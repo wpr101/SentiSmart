@@ -108,25 +108,38 @@ def visualize_data():
     
 
 def loop_data():
-    df = pd.read_csv('stock_dfs/FB.csv')
-    #print(df.head())
+    fb_df = pd.read_csv('stock_dfs/FB.csv')
+    aapl_df = pd.read_csv('stock_dfs/AAPL.csv')
+
+    
+    highest_volume_days(fb_df, num_days=10)
+    percentage_change(fb_df, percent_change=.10)
+    
+    
+
+#Calculate the num_days number of highest volume days 
+def highest_volume_days(df, num_days=10):
     dates = list(df['Date'])
-    open_prices = list(df['Open'])
-    high_prices = list(df['High'])
-    low_prices = list(df['Low'])
-    close_prices = list(df['Close'])
-    volumes = list(df['Volume'])
+    sorted_by_volume = df.sort_values('Volume', ascending=False)
+    volume_list = list(sorted_by_volume['Volume'])
+    dates_list = list(sorted_by_volume['Date'])
+    for i in range(num_days):
+        print('Volume', volume_list[i])
+        print('Date', dates_list[i])
+        print('')
+    
+
+#look at a given stock in the df and see if there were gains/losses greater
+#than the percent passed in
+def percentage_change(df, percent_change=.10):
+    dates = list(df['Date'])
     adj_closes = list(df['Adj Close'])
+
+    #Loop through dates 2000-2016 (if existing)
     for i in range(len(dates)-1):
-        '''print ('Date', dates[i])
-        print ('High', high_prices[i])
-        print ('Low', low_prices[i])
-        print ('Close', close_prices[i])
-        print ('Volume', volumes[i])
-        print ('AdjClose', adj_closes[i])
-        print ("")'''
-        #check if there was over a 10% gain from one day to next
-        if ((adj_closes[i+1] / adj_closes[i]) > 1.10):
+
+        #check if there was a gain over percent_change from one day to next
+        if ((adj_closes[i+1] / adj_closes[i]) > (1 + percent_change)):
 
             
             gain = adj_closes[i+1] / adj_closes[i]
@@ -137,7 +150,8 @@ def loop_data():
             print('Date', dates[i])
             print('')
 
-        if (1 - (adj_closes[i+1] / adj_closes[i]) > .10):
+        # check for losses worse than a user input value 
+        if (1 - (adj_closes[i+1] / adj_closes[i]) > percent_change):
             print('Loss of', '{0:.2f}'.format(100 * (1 - (adj_closes[i+1] / adj_closes[i]))) + '%') 
             print('Date', dates[i])
             print('')
