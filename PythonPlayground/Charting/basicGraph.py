@@ -7,9 +7,9 @@ import matplotlib.dates as mdates
 from matplotlib.finance import _candlestick
 import matplotlib
 import pylab
+import urllib2
 matplotlib.rcParams.update({'font.size': 9})
 
-eachStock = 'EBAY', 'TSLA', 'AAPL'
 
 def rsiFunc(prices, n=14):
     deltas = np.diff(prices)
@@ -40,9 +40,45 @@ def movingaverage(values, window):
     smas = np.convolve(values, weights, 'valid')
     return smas
 
+def ExpMovingAverage(values, window):
+    weights = np.exp(np.linspace(-1., 0., window))
+    weights /= weights.sum()
+    a = np.convolve(values, weights, mode='full')[:len(values)]
+    a[:window] = a[window]
+    return a
+
+def computeMACD(x, slow=26, fast=12):
+    '''
+    macd line = 12ema - 26ema
+    signal line = 9ema of the macd line
+    histogram = macd line - signal line
+    '''
+    emaslow = ExpMovingAverage(x, slow)
+    emafast = ExpMovingAverage(x, fast)
+    return emaslow, emafast, emafast-emaslow
+
+
+
 def graphData(stock, MA1, MA2):
     try:
-        stockFile = stock +'.txt'
+        try:
+            print 'pulling data on',stock
+            urlToVisit = 'http://chartapi.finance.yahoo.com/instrument/1.0/'+stock+'/chartdata;type=quote;range=10y/csv'
+            stockFile = []
+            try:
+                sourceCode = urllib2.urlopen(urlToVisit).read()
+                splitSource = sourceCode.split('\n')
+                for eachLine in splitSource:
+                    splitLine = eachLine.split(',')
+                    if len(splitLine) == 6:
+                        if 'values' not in eachLine:
+                            stockFile.append(eachLine)
+        
+            except Exception, e:
+                print str(e), 'failed to organize pulled data'
+        
+        except Exception, e:
+            print str(e), 'failed to pull price data'
         
         date, closep, highp, lowp, openp, volume = np.loadtxt(stockFile, delimiter=',', unpack=True,
                          converters={0: mdates.strpdate2num('%Y%m%d')})
@@ -70,15 +106,16 @@ def graphData(stock, MA1, MA2):
 
 
 
-        ax1 = plt.subplot2grid((5,4), (1,0), rowspan=4, colspan=4, axisbg='#07000d')
-        _candlestick(ax1, candleAr[-SP:], width=.6, colorup='#9eff15', colordown='#ff1717')
+        ax1 = plt.subplot2grid((6,4), (1,0), rowspan=4, colspan=4, axisbg='#07000d')
+        _candlestick(ax1, candleAr[-SP:], width=.6, colorup='#53C156', colordown='#ff1717')
 
-        ax1.plot(date[-SP:], Av1[-SP:],'#5998ff',label=label1, linewidth=1.5)
-        ax1.plot(date[-SP:], Av2[-SP:],'#e1edf9',label=label2, linewidth=1.5)
+        ax1.plot(date[-SP:], Av1[-SP:],'#e1edf9',label=label1, linewidth=1.5)
+        ax1.plot(date[-SP:], Av2[-SP:],'#4ee6fd',label=label2, linewidth=1.5)
 
         ax1.grid(True, color='w')
         ax1.xaxis.set_major_locator(mticker.MaxNLocator(10))
         ax1.xaxis.set_major_formatter(mdates.DateFormatter('%y-%m-%d'))
+        plt.gca().yaxis.set_major_locator(mticker.MaxNLocator(prune='upper'))
         ax1.yaxis.label.set_color("w")
         ax1.spines['bottom'].set_color("#5998ff")
         ax1.spines['top'].set_color("#5998ff")
@@ -88,8 +125,7 @@ def graphData(stock, MA1, MA2):
         ax1.tick_params(axis='x', colors='w')
         plt.ylabel('Stock price and Volume')
 
-        for label in ax1.xaxis.get_ticklabels():
-            label.set_rotation(45)
+
 
 
 
@@ -99,57 +135,34 @@ def graphData(stock, MA1, MA2):
         pylab.setp(textEd[0:5], color = 'w')
 
 
-        ax0 = plt.subplot2grid((5,4), (0,0), sharex=ax1, rowspan=1, colspan=4, axisbg='#07000d')
+        ax0 = plt.subplot2grid((6,4), (0,0), sharex=ax1, rowspan=1, colspan=4, axisbg='#07000d')
         
         rsi = rsiFunc(closep)
 
-        rsiCol = '#00ffe8'
+        rsiCol = '#c1f9f7'
+        posCol = '#386d13'
+        negCol = '#8f2020'
         ax0.plot(date[-SP:], rsi[-SP:],rsiCol,linewidth=1.5)
-        ax0.axhline(70, color = rsiCol)
-        ax0.axhline(30, color = rsiCol)
+        ax0.axhline(70, color = negCol)
+        ax0.axhline(30, color = posCol)
         ax0.fill_between(date[-SP:], rsi[-SP:],70, 
-                            where=(rsi[-SP:] >= 70), facecolor=rsiCol, edgecolor=rsiCol)
+                            where=(rsi[-SP:] >= 70), facecolor=negCol, edgecolor=negCol)
 
         ax0.fill_between(date[-SP:], rsi[-SP:],30, 
-                            where=(rsi[-SP:] <= 30), facecolor=rsiCol, edgecolor=rsiCol)
+                            where=(rsi[-SP:] <= 30), facecolor=posCol, edgecolor=posCol)
         ax0.spines['bottom'].set_color("#5998ff")
         ax0.spines['top'].set_color("#5998ff")
         ax0.spines['left'].set_color("#5998ff")
         ax0.spines['right'].set_color("#5998ff")
+        ax0.text(0.015, 0.95,'RSI (14)', va='top', color='w', transform=ax0.transAxes)
         ax0.tick_params(axis='x', colors='w')
         ax0.tick_params(axis='y', colors='w')
         ax0.set_yticks([30,70])
         ax0.yaxis.label.set_color("w")
         #plt.gca().yaxis.set_major_locator(mticker.MaxNLocator(prune='lower'))
-        plt.ylabel('RSI')
         
 
         volumeMin = 0
-        
-        '''
-        ax2 = plt.subplot2grid((5,4), (4,0), sharex=ax1, rowspan=1, colspan=4, axisbg='#07000d')
-        ax2.plot(date, volume, '#00ffe8', linewidth=.8)
-        ax2.fill_between(date, volumeMin, volume, facecolor='#00ffe8', alpha=.5)
-        ax2.axes.yaxis.set_ticklabels([])
-        plt.ylabel('Volume')
-        ax2.grid(False)
-        ax2.spines['bottom'].set_color("#5998ff")
-        ax2.spines['top'].set_color("#5998ff")
-        ax2.spines['left'].set_color("#5998ff")
-        ax2.spines['right'].set_color("#5998ff")
-        ax2.tick_params(axis='x', colors='w')
-        ax2.tick_params(axis='y', colors='w')
-
-
-        plt.ylabel('Volume', color=  'w')      
-        ax1.xaxis.set_major_locator(mticker.MaxNLocator(10))
-        ax1.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
-
-        for label in ax1.xaxis.get_ticklabels():
-            label.set_rotation(90)
-
-        for label in ax2.xaxis.get_ticklabels():
-            label.set_rotation(45)'''
 
 
         ax1v = ax1.twinx()
@@ -163,12 +176,47 @@ def graphData(stock, MA1, MA2):
         ax1v.set_ylim(0, 2*volume.max())
         ax1v.tick_params(axis='x', colors='w')
         ax1v.tick_params(axis='y', colors='w')
+
+
+
+        ax2 = plt.subplot2grid((6,4), (5,0), sharex=ax1, rowspan=1, colspan=4, axisbg='#07000d')
+        fillcolor = '#00ffe8'
+        nslow = 26
+        nfast = 12
+        nema = 9
+        
+        emaslow, emafast, macd = computeMACD(closep)
+        ema9 = ExpMovingAverage(macd, nema)
+        
+        ax2.plot(date[-SP:], macd[-SP:], color='#4ee6fd', lw=2)
+        ax2.plot(date[-SP:], ema9[-SP:], color='#e1edf9', lw=1)
+        ax2.fill_between(date[-SP:], macd[-SP:]-ema9[-SP:], 0, 
+                        alpha=0.5, facecolor=fillcolor, edgecolor=fillcolor)
+        ax2.text(0.015, 0.95, 'MACD 12,26,9', va='top', color='w', transform=ax2.transAxes)
+        ax2.spines['bottom'].set_color("#5998ff")
+        ax2.spines['top'].set_color("#5998ff")
+        ax2.spines['left'].set_color("#5998ff")
+        ax2.spines['right'].set_color("#5998ff")
+        ax2.tick_params(axis='x', colors='w')
+        ax2.tick_params(axis='y', colors='w')
+        ax2.yaxis.set_major_locator(mticker.MaxNLocator(nbins=5, prune='upper'))
+
+        for label in ax2.xaxis.get_ticklabels():
+            label.set_rotation(45)
+        
         
 
         plt.suptitle(stock, color='w')
 
 
         plt.setp(ax0.get_xticklabels(), visible=False)
+        plt.setp(ax1.get_xticklabels(), visible=False)
+
+        ax1.annotate('Big news!', (date[400], Av1[400]), xytext=(0.8, 0.8), 
+                    textcoords='axes fraction', 
+                    arrowprops=dict(facecolor='white',shrink=0.05),
+                    fontsize='14', color = 'w', 
+                    horizontalalignment='right', verticalalignment='top')
 
         plt.subplots_adjust(left=.09, bottom=.14, right=.94, top=.95, wspace=.20, hspace=0)
 
@@ -178,8 +226,8 @@ def graphData(stock, MA1, MA2):
     except Exception, e:
         print 'failed main loop', str(e)
 
-for stock in eachStock:
-    graphData(stock,20,200)
-    time.sleep(555)
+while True:
+    stockToUse = raw_input('Stock to chart: ')
+    graphData(stockToUse,20,200)
 
 

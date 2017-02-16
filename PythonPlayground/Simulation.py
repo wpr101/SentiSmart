@@ -8,6 +8,7 @@ import pandas as pd
 import pandas_datareader.data as web
 import pickle
 import requests
+import sys
 
 style.use('ggplot')
 
@@ -112,8 +113,9 @@ def loop_data():
     aapl_df = pd.read_csv('stock_dfs/AAPL.csv')
 
     
-    highest_volume_days(fb_df, num_days=10)
-    percentage_change(fb_df, percent_change=.10)
+    #highest_volume_days(fb_df, num_days=10)
+    #percentage_change(fb_df, percent_change=.10)
+    simulate_returns(fb_df, percent_change=.05, num_days=10)
     
     
 
@@ -155,7 +157,28 @@ def percentage_change(df, percent_change=.10):
             print('Loss of', '{0:.2f}'.format(100 * (1 - (adj_closes[i+1] / adj_closes[i]))) + '%') 
             print('Date', dates[i])
             print('')
-        
+
+#Simulate buying stock one day after a big gain/loss
+#Calculate returns for num_days in the future
+def simulate_returns(df, percent_change=.10, num_days=10):
+    dates = list(df['Date'])
+    adj_closes = list(df['Adj Close'])
+
+    #Loop through dates 2000-2016 (if existing)
+    for i in range(len(dates)-1):
+        change = (adj_closes[i+1] - adj_closes[i]) / adj_closes[i]
+        if (change > percent_change or change < -1 * percent_change):
+            print('Date', dates[i])
+            print('Current price', adj_closes[i])
+            print('Change of', '{0:.2f}'.format(100*change) + '%')
+            for j in range(1, num_days):
+                print(j, 'days in the future the price is:', adj_closes[j+i])
+                next_change = 100 * (adj_closes[i+j] - adj_closes[i+1]) / adj_closes[i+1]
+                if j == 1:
+                    print('BUY STOCK')
+                else:
+                    print('Change of', '{0:.2f}'.format(next_change) + '%')
+            print('')
 
 loop_data()
 
