@@ -115,7 +115,7 @@ def loop_data():
     
     #highest_volume_days(fb_df, num_days=10)
     #percentage_change(fb_df, percent_change=.10)
-    simulate_returns(fb_df, percent_change=.05, num_days=10)
+    simulate_returns(aapl_df, percent_change=.15, num_days=10)
     
     
 

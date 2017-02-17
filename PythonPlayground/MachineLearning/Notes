@@ -1,0 +1,14 @@
+True test is the forward test
+Test against data you have not seen
+When same variables present themselves, outcome may be similar
+Look for patterns
+Data snooping: making new inferences based on data
+Machine learning has data snooping built in, and accounted for
+Built on pattern recognition
+Back testing serves a truthful purpose
+Machine learning helping confirming the hypothesis
+Percent change will be used, and needs to be normalized, logrithmically more accurate
+Forward % change, can do a reverse point change day 9 to day 8 for example
+Compare current pattern to similar patterns
+Did similar patterns have a similar outcome?
+
