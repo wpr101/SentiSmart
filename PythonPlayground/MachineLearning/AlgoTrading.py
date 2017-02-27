@@ -111,7 +111,7 @@ def patternRecognition():
 
         howSim = (sim1 + sim2 + sim3 + sim4 + sim5 + sim6 + sim7 + sim8 + sim9 + sim10)/10.00
 
-        if howSim > 70:
+        if howSim > 80:
             patdex = patternAr.index(eachPattern)
 
             print '####################################'
@@ -122,6 +122,11 @@ def patternRecognition():
             print eachPattern
             print '-------------------------------'
             print 'predicted outcome', performanceAr[patdex]
+            xp = [1,2,3,4,5,6,7,8,9,10]
+            fig = plt.figure()
+            plt.plot(xp, patForRec)
+            plt.plot(xp, eachPattern)
+            plt.show()
             print '####################################'
             print '####################################'
 

@@ -1,0 +1,3 @@
+Try a new top 30 screen each day sorting on different factors
+Find the factors which yield the best next day returns
+We plan to sell in last 30 minutes of next day

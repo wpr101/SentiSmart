@@ -108,7 +108,7 @@ def visualize_data():
     plt.show()
     
 
-def loop_data():
+def loop_single_stock():
     fb_df = pd.read_csv('stock_dfs/FB.csv')
     aapl_df = pd.read_csv('stock_dfs/AAPL.csv')
 
@@ -116,6 +116,18 @@ def loop_data():
     #highest_volume_days(fb_df, num_days=10)
     #percentage_change(fb_df, percent_change=.10)
     simulate_returns(aapl_df, percent_change=.15, num_days=10)
+
+def loop_all_stocks():
+    all_stocks_df = pd.read_csv('sp500_joined_closes.csv')
+    appl_prices = list(all_stocks_df['AAPL'])
+    fb_prices = list(all_stocks_df['FB'])
+    dates_list = list(all_stocks_df['Date'])
+    
+    for i in range(len(appl_prices)):
+        print('Date', dates_list[i])
+        print('AAPL price', appl_prices[i])
+        print('FB price', fb_prices[i])
+        print('')
     
     
 
@@ -180,5 +192,4 @@ def simulate_returns(df, percent_change=.10, num_days=10):
                     print('Change of', '{0:.2f}'.format(next_change) + '%')
             print('')
 
-loop_data()
-
+loop_single_stock()
