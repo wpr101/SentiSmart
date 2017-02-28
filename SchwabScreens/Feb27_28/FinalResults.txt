@@ -1,0 +1,3 @@
+Average trade for 30 trades was -0.123%
+It was -.66% down day for NASDAQ
+I need other strategies to compare on the same day

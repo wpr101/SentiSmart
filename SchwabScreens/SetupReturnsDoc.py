@@ -10,7 +10,7 @@ for i in range(len(symbols)):
     #symbols have extra whitespace that needs to be removed
     symbols[i] = symbols[i].strip()
 
-    text_file.write(str(symbols[i]) + ' ' + str(last_trades[i]) + '\n')
+    text_file.write(str(symbols[i]) + ' ' + str(round(last_trades[i],2)) + '\n')
 
 text_file.close()
 
