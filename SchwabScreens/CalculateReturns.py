@@ -62,3 +62,13 @@ with open("Feb27_28/Results_Strat1.txt", "r") as f:
     averaged_random_return = averaged_random_return/MONTE_CARLO_SAMPLE_SIZE
     print('averaged_random_returns',round(averaged_random_return,2))
 
+    random_runs = []
+    for i in range(10):
+        random_sample = 0
+        for i in range(len(returns_list)):
+            index = randint(0,len(returns_list)-1)
+            random_sample += returns_list[index]
+        random_sample = random_sample/len(returns_list)
+        random_runs.append(round(random_sample,2))
+    print("random runs", random_runs)
+
