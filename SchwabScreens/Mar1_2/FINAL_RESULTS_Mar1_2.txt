@@ -1,9 +1,9 @@
 DOW (day performance): -0.27%
 NASDAQ (day performance): -0.53%
-Average index performance: 
+Average index performance: -0.4%
 
-Biggest gainer: Screen2
-Worst gainer: Screen5
+Biggest gainer: Screen2 2.89%
+Worst gainer: Screen5 -0.16%
 
 Screen1
 ('all returns', [2.36, -0.62, 3.26, 0.0, 3.23, -2.38, 2.3, 7.78, 5.18, 0.0, 5.35, -0.21, -3.02, 5.03, -0.33, 3.54, 7.53, 0.63, 2.51, 5.94])

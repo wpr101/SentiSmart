@@ -6,7 +6,7 @@ def percent_change(startPoint, currentPoint):
 MONTE_CARLO_SAMPLE_SIZE = 10000
 
 def calculate_returns():
-    with open("Mar1_2/Screen7 Mar-01-2017_RESULTS.txt", "r") as f:
+    with open("Feb28_1/Screen6_RESULTS.txt", "r") as f:
         symbols_list = []
         returns_list = []
         winners_count = 0

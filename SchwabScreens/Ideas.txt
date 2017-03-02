@@ -5,3 +5,5 @@ Find stocks which show up in multiple screens and see how they do
 
 Looks like P/E ratio and market cap greater than 500 are must
 Would be interesting to add dividend or other good fundamentals
+Screen 6 did better on an up day, and Screen 2 did better on a down day
+Screen 6 has the best accuracy
