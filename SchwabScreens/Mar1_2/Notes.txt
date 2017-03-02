@@ -1,2 +1,4 @@
 Look to see if the stocks hitting daily lows towards the end of the day will perform
 better the next day
+Screens starting at 9:30, from 1 to 7
+Truncated results to 20 per

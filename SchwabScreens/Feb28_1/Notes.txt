@@ -1,1 +1,2 @@
 Will try 8 different screens with 50 results to see which performs the best
+Collecting results starting at 9:35 starting with Screen 1
