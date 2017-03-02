@@ -1,2 +1,3 @@
 Thinking to create genetic algorithm where strategies only continue forward if they do well
-
+Will be trying some technical strategies for the first time
+And some gainer strategies

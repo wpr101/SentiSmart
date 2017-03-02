@@ -1,0 +1,6 @@
+Starting at 2:30PM EST or later:
+
+1) Copy template and document how much the market is doing
+2) Gather screens for the next day
+3) Manually enter in prices
+4) Setup results files for the following day
