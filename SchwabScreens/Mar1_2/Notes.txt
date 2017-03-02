@@ -2,3 +2,17 @@ Look to see if the stocks hitting daily lows towards the end of the day will per
 better the next day
 Screens starting at 9:30, from 1 to 7
 Truncated results to 20 per
+
+Screen1: 1.62 2.4
+
+Screen2: 1.9 2.89
+
+Screen3: 1.2 0.36
+
+Screen4: 0.83 2.85
+
+Screen5: -.01 -.16
+
+Screen6: 3.05 1.78
+
+Screen7: 2.52 0.4

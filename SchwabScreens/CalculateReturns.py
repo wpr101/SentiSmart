@@ -6,7 +6,7 @@ def percent_change(startPoint, currentPoint):
 MONTE_CARLO_SAMPLE_SIZE = 10000
 
 def calculate_returns():
-    with open("Feb27_28/Results_Strat1.txt", "r") as f:
+    with open("Mar1_2/Screen7 Mar-01-2017_RESULTS.txt", "r") as f:
         symbols_list = []
         returns_list = []
         winners_count = 0
@@ -42,7 +42,7 @@ def calculate_returns():
             #print('current',returns_list[i])
             #print('')
         actual_return = sum_returns/len(returns_list)   
-        print('actual_return', round(actual_return,2))
+        print('actual_return per trade', round(actual_return,2))
 
         
         max_return = 0
