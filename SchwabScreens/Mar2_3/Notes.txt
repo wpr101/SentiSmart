@@ -1,0 +1,2 @@
+Thinking to create genetic algorithm where strategies only continue forward if they do well
+

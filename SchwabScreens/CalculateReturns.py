@@ -65,12 +65,12 @@ def calculate_returns():
         print('max_random_return', round(max_return,2))
         print('min_random_return', round(min_return,2))
 
-        averaged_random_return = 0
+        '''averaged_random_return = 0
         for i in range(MONTE_CARLO_SAMPLE_SIZE):
             index = randint(0,len(returns_list)-1)
             averaged_random_return += returns_list[index]
         averaged_random_return = averaged_random_return/MONTE_CARLO_SAMPLE_SIZE
-        print('averaged_random_returns',round(averaged_random_return,2))
+        print('averaged_random_returns',round(averaged_random_return,2))'''
 
         random_runs = []
         for i in range(10):
