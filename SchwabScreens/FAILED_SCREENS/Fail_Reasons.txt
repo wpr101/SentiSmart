@@ -2,3 +2,8 @@ Limiting to small caps performed very poorly
 Allowing companies less than 500 million looks to be hurting
 Worst performer was small caps, no P/E... looks like bigger with P/E is good
 Strategies without P/E getting hurt
+
+3/3
+Top gainers are definitely not following through the next day, accuracy at 20%
+None of the technicals seemed to help, but could be because other underlying 
+conditions such as market cap were not setup

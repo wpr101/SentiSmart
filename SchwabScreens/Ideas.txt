@@ -12,4 +12,7 @@ Should add a volume requirement as well
 Factors we definitely want:
 1) Market CAP greater than 500 million
 2) Has a P/E ratio
-3) Volume greater than 50000
+3) Volume greater than 50000 or more
+
+3/3
+Screen6 was the clear winner again. 

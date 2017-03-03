@@ -2,3 +2,5 @@ Thinking to create genetic algorithm where strategies only continue forward if t
 Will be trying some technical strategies for the first time
 And some gainer strategies
 Only keeping strategies 2 and 6
+
+Screen 6 won again! 70% accuracy
