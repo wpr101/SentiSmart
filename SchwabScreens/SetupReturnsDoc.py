@@ -1,10 +1,16 @@
 import pandas as pd
 
-file_name = 'Mar2_3/' + 'WeakGainers Mar-02-2017'
+file_name = 'Mar1_2/' + 'Screen6 Mar-01-2017'
 
-large_cap_df = pd.read_csv( file_name + '.csv')
-symbols = list(large_cap_df['Symbol'])
-last_trades = list(large_cap_df['Last Trade'])
+df = pd.read_csv( file_name + '.csv')
+
+#Sorting by a specific column
+#Volume column has 4 spaces after
+#df = df.sort_values('Volume    ')
+
+symbols = list(df['Symbol'])
+last_trades = list(df['Last Trade'])
+
 
 
 text_file = open(file_name + "_RESULTS.txt", "w")
