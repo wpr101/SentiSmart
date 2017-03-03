@@ -1,8 +1,8 @@
 import pandas as pd
 
-file_name = "WeakGainers Mar-02-2017"
+file_name = 'Mar2_3/' + 'WeakGainers Mar-02-2017'
 
-large_cap_df = pd.read_csv('Mar2_3/' + file_name + '.csv')
+large_cap_df = pd.read_csv( file_name + '.csv')
 symbols = list(large_cap_df['Symbol'])
 last_trades = list(large_cap_df['Last Trade'])
 
@@ -15,6 +15,3 @@ for i in range(len(symbols)):
     text_file.write(str(symbols[i]) + ' ' + str(round(last_trades[i],2)) + '\n')
 
 text_file.close()
-
-
-    

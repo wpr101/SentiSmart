@@ -7,3 +7,9 @@ Looks like P/E ratio and market cap greater than 500 are must
 Would be interesting to add dividend or other good fundamentals
 Screen 6 did better on an up day, and Screen 2 did better on a down day
 Screen 6 has the best accuracy
+Should add a volume requirement as well
+
+Factors we definitely want:
+1) Market CAP greater than 500 million
+2) Has a P/E ratio
+3) Volume greater than 20000
