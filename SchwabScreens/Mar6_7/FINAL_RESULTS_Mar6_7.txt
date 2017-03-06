@@ -1,7 +1,7 @@
 ***BUY DAY***
-DOW (day performance): 
-NASDAQ (day performance): 
-Average index performance:
+DOW (day performance): -0.20%
+NASDAQ (day performance): -0.36%
+Average index performance: -0.28%
 
 ***SELL DAY***
 DOW (day performance): 

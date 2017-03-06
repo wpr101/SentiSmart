@@ -1,6 +1,6 @@
 import pandas as pd
 
-file_name = 'Mar1_2/' + 'Screen6 Mar-01-2017'
+file_name = 'Mar6_7/' + 'Volume_300k+ Mar-06-2017'
 
 df = pd.read_csv( file_name + '.csv')
 

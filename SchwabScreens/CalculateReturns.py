@@ -1,14 +1,17 @@
 from random import randint
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.style.use('ggplot')
 
 def percent_change(startPoint, currentPoint):
     return ((float(currentPoint) - startPoint)/abs(startPoint))*100.00
 
 MONTE_CARLO_SAMPLE_SIZE = 10000
-path = 'Mar2_3/'
-file_name = 'WeakGainers Mar-02-2017_RESULTS.txt'
+path = 'Feb28_1/'
+file_name = 'Screen6_RESULTS'
 
 def calculate_returns():
-    with open(path + file_name, "r") as f:
+    with open(path + file_name + '.txt', "r") as f:
         print('file_name', file_name)
         symbols_list = []
         returns_list = []
@@ -25,6 +28,20 @@ def calculate_returns():
                 losers_count += 1
             symbols_list.append(symbol)
             returns_list.append(change)
+
+        equity_graph_list = []
+        balance = 0
+        position_size = 10000
+        for i in range(len(returns_list)):
+            percent = returns_list[i]/100
+            dollar_change = percent * position_size
+            balance += dollar_change
+            equity_graph_list.append(balance)
+        #print(equity_graph_list)
+            
+
+        plt.plot(equity_graph_list)
+        plt.savefig(path + file_name + '.png')
         print('all returns',returns_list)
         #print('num winners', winners_count)
         #print('num losers', losers_count)
