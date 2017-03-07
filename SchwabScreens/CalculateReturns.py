@@ -7,8 +7,8 @@ def percent_change(startPoint, currentPoint):
     return ((float(currentPoint) - startPoint)/abs(startPoint))*100.00
 
 MONTE_CARLO_SAMPLE_SIZE = 10000
-path = 'Feb28_1/'
-file_name = 'Screen6_RESULTS'
+path = 'Mar1_2/'
+file_name = 'Screen5 Mar-01-2017_RESULTS'
 
 def calculate_returns():
     with open(path + file_name + '.txt', "r") as f:
@@ -39,7 +39,8 @@ def calculate_returns():
             equity_graph_list.append(balance)
         #print(equity_graph_list)
             
-
+        plt.xlabel('trades')
+        plt.ylabel('profit')
         plt.plot(equity_graph_list)
         plt.savefig(path + file_name + '.png')
         print('all returns',returns_list)
