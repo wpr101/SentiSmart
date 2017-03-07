@@ -4,23 +4,91 @@ NASDAQ (day performance): -0.36%
 Average index performance: -0.28%
 
 ***SELL DAY***
-DOW (day performance): 
-NASDAQ (day performance): 
-Average index performance:
+DOW (day performance): -0.11%
+NASDAQ (day performance): -0.14%
+Average index performance: -0.12%
 
-Biggest gainer 
-Worst gainer
+Biggest gainer: Volume_1M+ Mar-06-2017_RESULTS 
+Worst gainer: BookValue Mar-06-2017_RESULTS
 
-Screen1
+('file_name', 'BookValue_AndPE Mar-06-2017_RESULTS')
+('all returns', [-1.21, 0.16, -5.46, -3.99, 0.99, -0.12, -0.45, -0.2, 0.0, -1.36, -3.24, 1.72, -1.23, 0.8, -2.89, -0.13, -1.75, -0.47, -1.64, 1.9])
+('% winners', 25.0)
+('actual_return per trade', -0.93)
+('max_random_return', 0.54)
+('min_random_return', -2.44)
+('random runs', [-1.01, -1.01, -0.89, -0.74, -1.17, -0.11, -0.3, -0.53, -0.54, -1.49])
 
-Screen2
+('file_name', 'BookValue Mar-06-2017_RESULTS')
+('all returns', [-2.18, -1.21, -3.93, -5.39, 0.57, -0.75, 0.1, -0.89, -5.46, -3.99, 0.79, -0.19, -0.1, -0.6, -0.31, -0.27, -0.8, -1.49, -3.29, -2.64])
+('% winners', 15.0)
+('actual_return per trade', -1.6)
+('max_random_return', 0.0)
+('min_random_return', -3.17)
+('random runs', [-1.67, -0.84, -1.1, -1.74, -1.68, -1.81, -2.06, -1.42, -1.3, -0.89])
 
-Screen3
+('file_name', 'MC_Greater5B Mar-06-2017_RESULTS')
+('all returns', [-2.29, 0.0, -1.31, 0.27, 0.76, 1.75, -0.5, 0.01, -0.18, -1.63, -3.44, -0.15, 0.77, -0.69, -1.13, -1.87, -1.88, -1.7, -0.61, -1.08])
+('% winners', 25.0)
+('actual_return per trade', -0.74)
+('max_random_return', 0.29)
+('min_random_return', -1.74)
+('random runs', [-1.23, -0.99, -0.69, -0.73, -0.81, -0.7, -0.74, -0.79, -0.68, -0.47])
 
-Screen4
+('file_name', 'MC_Volume_Price_Higher Mar-06-2017_RESULTS')
+('all returns', [-0.05, -2.67, -1.39, 0.33, 0.79, -0.48, 1.58, 0.03, -0.18, -1.65, -3.49, -0.06, 0.7, -1.59, -1.18, -1.87, -1.89, -0.54, -1.11, -1.73])
+('% winners', 25.0)
+('actual_return per trade', -0.82)
+('max_random_return', 0.23)
+('min_random_return', -1.81)
+('random runs', [-0.42, -0.29, -0.64, -0.86, -1.02, -0.72, -0.49, -0.91, -1.19, -1.0])
 
-Screen5
+('file_name', 'Price_Over_20 Mar-06-2017_RESULTS')
+('all returns', [1.03, -1.14, -1.85, 0.27, -4.17, 0.82, -0.48, 1.65, 0.03, -1.36, -3.49, -1.7, 1.89, -1.32, -1.45, -0.22, 0.21, -0.09, 0.65, -0.65])
+('% winners', 40.0)
+('actual_return per trade', -0.57)
+('max_random_return', 0.73)
+('min_random_return', -2.04)
+('random runs', [-0.47, -0.79, -0.66, -0.48, -0.2, -1.07, -0.58, -1.14, -1.08, -1.0])
 
-Screen6
+('file_name', 'RSI_Less30 Mar-06-2017_RESULTS')
+('all returns', [-1.61, -2.87, -0.19, -0.4, -0.63, -3.34, -1.85, -0.89, -0.53, -2.54, 0.48, -2.14, 0.8, -0.66, -1.68, -1.68, -2.98, 0.21, -1.26, -2.2])
+('% winners', 15.0)
+('actual_return per trade', -1.3)
+('max_random_return', 0.0)
+('min_random_return', -2.25)
+('random runs', [-1.37, -1.59, -1.35, -1.55, -0.88, -1.4, -1.16, -1.14, -1.27, -1.19])
 
-Screen7
+('file_name', 'Screen6_50kVolMin Mar-06-2017_RESULTS')
+('all returns', [-1.61, 1.3, 1.12, -0.77, -2.49, 0.05, 0.49, -1.62, -1.85, -4.1, -4.26, -0.31, 0.66, 1.55, -0.7, 0.15, -0.69, -0.27, -3.23, -1.36])
+('% winners', 35.0)
+('actual_return per trade', -0.9)
+('max_random_return', 0.39)
+('min_random_return', -2.55)
+('random runs', [-0.5, -0.7, -0.79, -0.53, -1.21, -0.59, -0.48, -1.29, -0.9, -0.8])
+
+('file_name', 'Screen6 Mar-06-2017_RESULTS')
+('all returns', [-1.81, 1.3, -0.52, 0.85, 0.1, -2.86, 0.65, -1.62, -1.76, -4.44, -4.11, 0.76, 1.78, -0.49, 0.11, -0.89, -3.03, -4.75, -0.98, -0.55])
+('% winners', 35.0)
+('actual_return per trade', -1.11)
+('max_random_return', 0.34)
+('min_random_return', -2.6)
+('random runs', [-0.63, -0.1, -1.4, -2.0, -1.31, -1.15, -1.1, -0.89, -0.99, -1.61])
+
+('file_name', 'Volume_1M+ Mar-06-2017_RESULTS')
+('all returns', [1.63, -1.81, 0.94, -0.89, -1.72, -0.1, -1.57, -1.62, 0.33, -4.2, -0.25, 0.79, 1.68, -0.59, -0.03, -0.88, -3.34, -3.24, -0.37, 5.46])
+('% winners', 30.0)
+('actual_return per trade', -0.49)
+('max_random_return', 1.49)
+('min_random_return', -2.34)
+('random runs', [0.12, -1.08, -0.37, -0.86, -0.47, -0.36, -0.32, -0.82, 0.46, -0.54])
+
+('file_name', 'Volume_300k+ Mar-06-2017_RESULTS')
+('all returns', [-1.81, 1.3, -0.8, 1.08, -3.63, -0.16, 0.36, -1.72, -1.62, -4.26, -0.31, 0.76, -0.69, 1.68, -0.7, 0.08, -0.55, -3.34, -1.18, -2.56])
+('% winners', 30.0)
+('actual_return per trade', -0.9)
+('max_random_return', 0.47)
+('min_random_return', -2.23)
+('random runs', [-1.0, -0.96, -1.29, -1.09, -0.94, -0.88, -0.99, -0.09, -1.4, -0.28])
+
+
