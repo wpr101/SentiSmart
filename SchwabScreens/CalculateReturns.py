@@ -1,4 +1,5 @@
 from random import randint
+import os
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.style.use('ggplot')
@@ -8,10 +9,9 @@ def percent_change(startPoint, currentPoint):
 
 MONTE_CARLO_SAMPLE_SIZE = 10000
 path = 'Mar7_8/'
-file_name = 'Volume_1M+ Mar-07-2017_RESULTS_SELLS'
 
-def calculate_returns():
-    with open(path + file_name + '.txt', "r") as f:
+def calculate_returns(file_name):
+    with open(file_name, "r") as f:
         print('file_name', file_name)
         symbols_list = []
         returns_list = []
@@ -29,6 +29,7 @@ def calculate_returns():
             symbols_list.append(symbol)
             returns_list.append(change)
 
+        print('num trades', len(symbols_list))
         equity_graph_list = []
         balance = 0
         position_size = 10000
@@ -41,12 +42,14 @@ def calculate_returns():
             
         plt.xlabel('trades')
         plt.ylabel('profit')
-        plt.plot(equity_graph_list)
-        plt.savefig(path + file_name + '.png')
+        plt.plot(equity_graph_list, label=file_name)
+        '''plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.05),
+          ncol=3, fancybox=True, shadow=True)'''
+        
         print('all returns',returns_list)
         #print('num winners', winners_count)
         #print('num losers', losers_count)
-        print('% winners', round(float(winners_count)/len(symbols_list),2) * 100)
+        print('% winners', round(round(float(winners_count)/len(symbols_list),2) * 100))
 
         #print(symbols_list)
         #print(returns_list)
@@ -102,6 +105,13 @@ def calculate_returns():
             random_sample = random_sample/len(returns_list)
             random_runs.append(round(random_sample,2))
         print("random runs", random_runs)
+        print('')
 
-calculate_returns()
+for file_name in os.listdir(path):
+    if file_name.endswith("RESULTS.txt"): 
+        calculate_returns(os.path.join(path, file_name))
+
+
+
+plt.savefig(path + 'Results.png')
 
