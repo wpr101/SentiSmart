@@ -1,0 +1,2 @@
+Automated a lot to make process go much faster
+May want to print some rankings at the start of CalculateReturns
