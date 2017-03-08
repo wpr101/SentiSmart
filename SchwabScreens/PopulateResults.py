@@ -5,7 +5,6 @@ import os
 
 
 path = 'Mar7_8/'
-file_name = 'Very_High_Quality Mar-07-2017'
 
 for file_name in os.listdir(path):
     if file_name.endswith(".csv"): 

@@ -8,7 +8,7 @@ def percent_change(startPoint, currentPoint):
     return ((float(currentPoint) - startPoint)/abs(startPoint))*100.00
 
 MONTE_CARLO_SAMPLE_SIZE = 10000
-path = 'Mar7_8/'
+path = 'Feb28_1/'
 
 def calculate_returns(file_name):
     with open(file_name, "r") as f:
