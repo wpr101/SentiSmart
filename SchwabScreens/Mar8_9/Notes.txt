@@ -1,2 +1,3 @@
 Automated a lot to make process go much faster
 May want to print some rankings at the start of CalculateReturns
+'Basic' screen was recorded at 10:42, others at 9:30
