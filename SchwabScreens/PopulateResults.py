@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 
-path = 'Mar8_9/'
+path = 'Mar9_10/'
 
 for file_name in os.listdir(path):
     if file_name.endswith(".csv"): 
@@ -23,11 +23,16 @@ for file_name in os.listdir(path):
 
         for i in range(len(symbol_list)):
             try:
-                sell_price = getQuotes(symbol_list[i])[0]['LastTradeWithCurrency']
-                #print(symbol_list[i], str(buy_price_list[i]), sell_price)
-                output_list.append(symbol_list[i] + ' ' + str(buy_price_list[i]) + ' ' + str(sell_price))
+                quote = getQuotes(symbol_list[i])
+                sell_price = quote[0]['LastTradeWithCurrency']
+                index = quote[0]['Index']
+                #Only look at NYSE and NASDAQ
+                if (index == 'NYSE' or index == 'NASDAQ'):
+                    output_list.append(symbol_list[i] + ' ' + 
+                    str(buy_price_list[i]) + ' ' + str(sell_price))
             except Exception:
-                print('bad symbol', symbol_list[i])
+                pass
+                #print('bad symbol', symbol_list[i])
           
 
         text_file = open(path + file_name + "_RESULTS.txt", "w")

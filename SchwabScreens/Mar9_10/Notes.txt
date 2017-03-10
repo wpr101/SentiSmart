@@ -1,0 +1,1 @@
+Some stocks getting the wrong prices, need to put in check for NYSE and NASDAQ
