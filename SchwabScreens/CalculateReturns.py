@@ -1,5 +1,7 @@
 from random import randint
 import os
+import operator
+import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.style.use('ggplot')
@@ -9,10 +11,11 @@ def percent_change(startPoint, currentPoint):
 
 MONTE_CARLO_SAMPLE_SIZE = 10000
 path = 'Mar9_10/'
+results_data = {}
 
 def calculate_returns(file_name):
     with open(file_name, "r") as f:
-        print('file_name', file_name)
+        #print('file_name', file_name)
         symbols_list = []
         returns_list = []
         winners_count = 0
@@ -29,7 +32,7 @@ def calculate_returns(file_name):
             symbols_list.append(symbol)
             returns_list.append(change)
 
-        print('num trades', len(symbols_list))
+        #print('num trades', len(symbols_list))
         equity_graph_list = []
         balance = 0
         position_size = 10000
@@ -46,10 +49,11 @@ def calculate_returns(file_name):
         '''plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.05),
           ncol=3, fancybox=True, shadow=True)'''
         
-        print('all returns',returns_list)
+        #print('all returns',returns_list)
         #print('num winners', winners_count)
         #print('num losers', losers_count)
-        print('% winners', round(round(float(winners_count)/len(symbols_list),2) * 100))
+        percent_winners = round(round(float(winners_count)/len(symbols_list),2) * 100)
+        #print('% winners', percent_winners)
 
         #print(symbols_list)
         #print(returns_list)
@@ -65,13 +69,18 @@ def calculate_returns(file_name):
             #print('sum',sum_returns)
             #print('current',returns_list[i])
             #print('')
-        actual_return = sum_returns/len(returns_list)   
-        print('actual_return per trade', round(actual_return,2))
+        actual_return = sum_returns/len(returns_list)
+        actual_return = round(actual_return,2)
+        #print('actual_return per trade', actual_return)
+        variance = round(np.var(returns_list),2)
+
+
+        results_data[file_name] = (actual_return, percent_winners, variance)
 
         
         max_return = 0
         min_return = 0
-        for a in range(0,MONTE_CARLO_SAMPLE_SIZE):
+        '''for a in range(0,MONTE_CARLO_SAMPLE_SIZE):
             average_monte_carlo_return = 0
             monte_carlo_return = 0
             for i in range(len(returns_list)):
@@ -84,10 +93,10 @@ def calculate_returns(file_name):
                 max_return = average_monte_carlo_return
 
             if (average_monte_carlo_return < min_return):
-                min_return = average_monte_carlo_return
+                min_return = average_monte_carlo_return'''
 
-        print('max_random_return', round(max_return,2))
-        print('min_random_return', round(min_return,2))
+        #print('max_random_return', round(max_return,2))
+        #print('min_random_return', round(min_return,2))
 
         '''averaged_random_return = 0
         for i in range(MONTE_CARLO_SAMPLE_SIZE):
@@ -96,7 +105,7 @@ def calculate_returns(file_name):
         averaged_random_return = averaged_random_return/MONTE_CARLO_SAMPLE_SIZE
         print('averaged_random_returns',round(averaged_random_return,2))'''
 
-        random_runs = []
+        '''random_runs = []
         for i in range(10):
             random_sample = 0
             for i in range(len(returns_list)):
@@ -105,11 +114,21 @@ def calculate_returns(file_name):
             random_sample = random_sample/len(returns_list)
             random_runs.append(round(random_sample,2))
         print("random runs", random_runs)
-        print('')
+        print('')'''
 
 for file_name in os.listdir(path):
     if file_name.endswith("RESULTS.txt"): 
         calculate_returns(os.path.join(path, file_name))
+
+results_data_sorted = sorted(results_data.items(), key=operator.itemgetter(1), reverse=True)
+
+text_file = open(path + "REPORT.txt", "w")
+text_file.write('Average index performance: ' + '\n\n')
+text_file.write('FORMAT: scan_name, average_trade_return, accuracy, variance' + '\n\n')
+for scan in results_data_sorted:
+    text_file.write(str(scan) + '\n')
+
+text_file.close()
 
 
 

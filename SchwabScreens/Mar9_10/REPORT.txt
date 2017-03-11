@@ -1,14 +1,7 @@
-***BUY DAY***
-DOW (day performance): 
-NASDAQ (day performance): 
-Average index performance:
-
-***SELL DAY***
-DOW (day performance): -0.02%
-NASDAQ (day performance): 0.04%
-Average index performance:
+Average index performance: 
 
 FORMAT: scan_name, average_trade_return, accuracy, variance
+
 ('Mar9_10/Volume_1M+ Mar-09-2017.csv_RESULTS.txt', (0.82, 74.0, 4.02))
 ('Mar9_10/Basic_500k_Vol_PercentOnly Mar-09-2017.csv_RESULTS.txt', (0.57, 55.0, 18.06))
 ('Mar9_10/Basic_200k_Vol_PercentOnly Mar-09-2017.csv_RESULTS.txt', (0.54, 57.0, 19.22))

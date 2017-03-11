@@ -1,4 +1,4 @@
 from googlefinance import getQuotes
 
-sell_price = getQuotes('REI')[0]['LastTradePrice']
+sell_price = getQuotes('USLV')[0]['LastTradePrice']
 print(sell_price)

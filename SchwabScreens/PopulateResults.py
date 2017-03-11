@@ -3,8 +3,9 @@ import json
 import pandas as pd
 import os
 
-
 path = 'Mar9_10/'
+#symbols which have bad data on Google
+bad_symbol_list = ['USLV']
 
 for file_name in os.listdir(path):
     if file_name.endswith(".csv"): 
@@ -23,6 +24,8 @@ for file_name in os.listdir(path):
 
         for i in range(len(symbol_list)):
             try:
+                if (symbol_list[i] in bad_symbol_list):
+                    continue
                 quote = getQuotes(symbol_list[i])
                 sell_price = quote[0]['LastTradeWithCurrency']
                 index = quote[0]['Index']
