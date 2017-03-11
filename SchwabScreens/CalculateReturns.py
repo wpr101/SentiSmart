@@ -10,12 +10,12 @@ def percent_change(startPoint, currentPoint):
     return ((float(currentPoint) - startPoint)/abs(startPoint))*100.00
 
 MONTE_CARLO_SAMPLE_SIZE = 10000
-path = 'Mar9_10/'
+path = 'Mar8_9/'
 results_data = {}
 
 def calculate_returns(file_name):
     with open(file_name, "r") as f:
-        #print('file_name', file_name)
+        print('file_name', file_name)
         symbols_list = []
         returns_list = []
         winners_count = 0
@@ -32,7 +32,7 @@ def calculate_returns(file_name):
             symbols_list.append(symbol)
             returns_list.append(change)
 
-        #print('num trades', len(symbols_list))
+        print('num trades', len(symbols_list))
         equity_graph_list = []
         balance = 0
         position_size = 10000
@@ -49,11 +49,11 @@ def calculate_returns(file_name):
         '''plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.05),
           ncol=3, fancybox=True, shadow=True)'''
         
-        #print('all returns',returns_list)
+        print('all returns',returns_list)
         #print('num winners', winners_count)
         #print('num losers', losers_count)
         percent_winners = round(round(float(winners_count)/len(symbols_list),2) * 100)
-        #print('% winners', percent_winners)
+        print('% winners', percent_winners)
 
         #print(symbols_list)
         #print(returns_list)
@@ -71,7 +71,7 @@ def calculate_returns(file_name):
             #print('')
         actual_return = sum_returns/len(returns_list)
         actual_return = round(actual_return,2)
-        #print('actual_return per trade', actual_return)
+        print('actual_return per trade', actual_return)
         variance = round(np.var(returns_list),2)
 
 
@@ -113,8 +113,8 @@ def calculate_returns(file_name):
                 random_sample += returns_list[index]
             random_sample = random_sample/len(returns_list)
             random_runs.append(round(random_sample,2))
-        print("random runs", random_runs)
-        print('')'''
+        print("random runs", random_runs)'''
+        print('')
 
 for file_name in os.listdir(path):
     if file_name.endswith("RESULTS.txt"): 
