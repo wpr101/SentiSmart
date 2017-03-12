@@ -1,4 +1,5 @@
 from googlefinance import getQuotes
 
-sell_price = getQuotes('USLV')[0]['LastTradePrice']
-print(sell_price)
+dow_price = getQuotes('DJI')[0]['LastTradePrice']
+nasdaq_price = getQuotes('IXIC')[0]['LastTradePrice']
+print(nasdaq_price)

@@ -9,8 +9,16 @@ matplotlib.style.use('ggplot')
 def percent_change(startPoint, currentPoint):
     return ((float(currentPoint) - startPoint)/abs(startPoint))*100.00
 
+def average_first_num(returns_list, start, end):
+    average_first_five = 0
+    for i in range(start,end):
+        average_first_five += returns_list[i]
+    average_first_five = average_first_five/(end-start)
+    return(average_first_five)
+    
+
 MONTE_CARLO_SAMPLE_SIZE = 10000
-path = 'Mar8_9/'
+path = 'Feb28_1/'
 results_data = {}
 
 def calculate_returns(file_name):
@@ -49,7 +57,14 @@ def calculate_returns(file_name):
         '''plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.05),
           ncol=3, fancybox=True, shadow=True)'''
         
-        print('all returns',returns_list)
+        print('all returns', returns_list)
+
+        print('average 0-5 trades', round(average_first_num(returns_list, 0, 5),2))
+        print('average 0-10 trades', round(average_first_num(returns_list, 0, 10),2))
+        print('average 5-10 trades', round(average_first_num(returns_list, 5, 10),2))
+        #Print first 5 results and average
+
+
         #print('num winners', winners_count)
         #print('num losers', losers_count)
         percent_winners = round(round(float(winners_count)/len(symbols_list),2) * 100)

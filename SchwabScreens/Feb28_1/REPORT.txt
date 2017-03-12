@@ -1,0 +1,12 @@
+Average index performance: 
+
+FORMAT: scan_name, average_trade_return, accuracy, variance
+
+('Feb28_1/Screen6_RESULTS.txt', (3.05, 95.0, 15.24))
+('Feb28_1/Screen7_RESULTS.txt', (2.52, 80.0, 18.31))
+('Feb28_1/Screen8_RESULTS.txt', (2.18, 85.0, 3.07))
+('Feb28_1/Screen2_RESULTS.txt', (1.9, 85.0, 2.8))
+('Feb28_1/Screen1_RESULTS.txt', (1.62, 80.0, 24.95))
+('Feb28_1/Screen3_RESULTS.txt', (1.2, 65.0, 18.76))
+('Feb28_1/Screen4_RESULTS.txt', (0.83, 80.0, 19.12))
+('Feb28_1/Screen5_RESULTS.txt', (-0.01, 60.0, 28.08))
