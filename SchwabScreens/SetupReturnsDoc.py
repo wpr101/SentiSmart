@@ -1,23 +1,51 @@
+from googlefinance import getQuotes
 import pandas as pd
 
-file_name = 'Mar7_8/' + 'Very_High_Quality Mar-07-2017'
+path = 'Mar13_14/'
+file_name = 'Everything Mar-12-2017'
+bad_symbol_list = ['USLV']
 
-df = pd.read_csv( file_name + '.csv')
+df = pd.read_csv( path + file_name + '.csv')
 
 #Sorting by a specific column
 #Volume column has 4 spaces after
 #df = df.sort_values('Volume    ')
 
-symbols = list(df['Symbol'])
-last_trades = list(df['Last Trade'])
+columns_list = list(df.columns.values)
 
 
+for column in range(len(columns_list)-1):
+    print(columns_list[column])
+    df = df.sort_values(columns_list[column])
+    
+    symbol_list = list(df['Symbol'])
+    for i in range(len(symbol_list)):
+        symbol_list[i] = symbol_list[i].strip()
 
-text_file = open(file_name + "_RESULTS.txt", "w")
-for i in range(len(symbols)):
-    #symbols have extra whitespace that needs to be removed
-    symbols[i] = symbols[i].strip()
+    buy_price_list = list(df['Last Trade'])
+    sell_price_list = []
+    output_list = []
 
-    text_file.write(str(symbols[i]) + ' ' + str(round(last_trades[i],2)) + '\n')
+    for i in range(len(symbol_list)):
+        try:
+            if (symbol_list[i] in bad_symbol_list):
+                continue
+            quote = getQuotes(symbol_list[i])
+            sell_price = quote[0]['LastTradeWithCurrency']
+            index = quote[0]['Index']
+            #Only look at NYSE and NASDAQ
+            if (index == 'NYSE' or index == 'NASDAQ'):
+                output_list.append(symbol_list[i] + ' ' + 
+                str(buy_price_list[i]) + ' ' + str(sell_price))
+        except Exception:
+            pass
+            #print('bad symbol', symbol_list[i])
+          
+    output_name = columns_list[column].replace('/', '')
 
-text_file.close()
+    text_file = open(path + file_name + "_RESULTS.txt", "w")
+    for i in range(len(output_list)):
+
+        text_file.write(output_list[i] + '\n')
+
+    text_file.close()
