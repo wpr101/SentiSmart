@@ -1,4 +1,5 @@
 from random import randint
+from collections import OrderedDict
 import os
 import operator
 import numpy as np
@@ -18,7 +19,7 @@ def average_first_num(returns_list, start, end):
     
 
 MONTE_CARLO_SAMPLE_SIZE = 10000
-path = 'Feb28_1/'
+path = 'Mar13_14/'
 results_data = {}
 
 def calculate_returns(file_name):
@@ -59,9 +60,14 @@ def calculate_returns(file_name):
         
         print('all returns', returns_list)
 
-        print('average 0-5 trades', round(average_first_num(returns_list, 0, 5),2))
-        print('average 0-10 trades', round(average_first_num(returns_list, 0, 10),2))
-        print('average 5-10 trades', round(average_first_num(returns_list, 5, 10),2))
+        first_five_trades = round(average_first_num(returns_list, 0, 5),2)
+        first_ten_trades = round(average_first_num(returns_list, 0, 10),2)
+        five_ten_trades = round(average_first_num(returns_list, 5, 10),2)
+        last_five_trades = round(average_first_num(returns_list, len(returns_list)-5, len(returns_list)),2)
+        print('average 0-5 trades', first_five_trades)
+        print('average 0-10 trades', first_ten_trades)
+        print('average 5-10 trades', five_ten_trades)
+        print('average last 5 trades', last_five_trades)
         #Print first 5 results and average
 
 
@@ -90,7 +96,8 @@ def calculate_returns(file_name):
         variance = round(np.var(returns_list),2)
 
 
-        results_data[file_name] = (actual_return, percent_winners, variance)
+        results_data[file_name] = (first_five_trades, first_ten_trades, five_ten_trades, last_five_trades,
+                                    actual_return, percent_winners, variance )
 
         
         max_return = 0
@@ -135,11 +142,17 @@ for file_name in os.listdir(path):
     if file_name.endswith("RESULTS.txt"): 
         calculate_returns(os.path.join(path, file_name))
 
-results_data_sorted = sorted(results_data.items(), key=operator.itemgetter(1), reverse=True)
+#Sort by first item in dictionary key, can double index into the tuple
+results_data_sorted = sorted(results_data.items(), key=lambda t: t[1], reverse=True)
 
 text_file = open(path + "REPORT.txt", "w")
 text_file.write('Average index performance: ' + '\n\n')
-text_file.write('FORMAT: scan_name, average_trade_return, accuracy, variance' + '\n\n')
+#text_file.write('FORMAT: scan_name, average_trade_return, accuracy, variance,' +  
+                    #'0-5 trades, 0-10 trades, 5-10 trades, last trades' + '\n\n')
+
+
+text_file.write('FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, ' + 
+                'average_trade_return, accuracy, variance,' + '\n\n')
 for scan in results_data_sorted:
     text_file.write(str(scan) + '\n')
 
