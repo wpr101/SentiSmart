@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import os
 
-path = 'Mar9_10/'
+path = 'Mar13_14/'
 #symbols which have bad data on Google
 bad_symbol_list = ['USLV']
 

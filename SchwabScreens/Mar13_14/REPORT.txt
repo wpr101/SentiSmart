@@ -1,0 +1,21 @@
+Average index performance: -0.26%
+
+FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, average_trade_return, accuracy, variance,
+
+('Mar13_14/MACD _RESULTS.txt', (-0.31, -0.49, -0.67, -9.2, -2.84, 31.0, 47.76))
+('Mar13_14/Money Flow Percent_RESULTS.txt', (-0.37, -0.93, -1.48, -8.53, -2.86, 31.0, 47.79))
+('Mar13_14/RSI 10 Day_RESULTS.txt', (-0.43, -0.07, 0.28, -9.78, -2.82, 31.0, 45.81))
+('Mar13_14/PE (ttm)_RESULTS.txt', (-0.67, -1.22, -1.76, -10.8, -2.83, 31.0, 44.78))
+('Mar13_14/Williams % R_RESULTS.txt', (-1.24, -1.33, -1.42, -7.99, -2.86, 31.0, 47.74))
+('Mar13_14/Symbol_RESULTS.txt', (-1.4, -1.17, -0.94, -8.78, -2.88, 28.0, 45.51))
+('Mar13_14/Bollinger Band(Middle)_RESULTS.txt', (-1.48, -1.38, -1.28, -10.54, -2.85, 31.0, 47.84))
+('Mar13_14/EMA 15 Day_RESULTS.txt', (-1.49, -1.39, -1.29, -10.4, -2.82, 31.0, 45.77))
+('Mar13_14/Last Trade_RESULTS.txt', (-1.65, -1.09, -0.53, -10.4, -2.88, 31.0, 45.53))
+('Mar13_14/Market Cap_RESULTS.txt', (-1.76, -1.81, -1.86, -1.02, -2.83, 31.0, 45.78))
+('Mar13_14/Daily Low Count_RESULTS.txt', (-1.98, -1.29, -0.6, -11.06, -2.84, 31.0, 45.8))
+('Mar13_14/% Chg from 5 day Avg Close_RESULTS.txt', (-2.8, -1.91, -1.02, -8.69, -2.83, 31.0, 45.82))
+('Mar13_14/% Chg of Range from Low_RESULTS.txt', (-3.18, -2.33, -1.49, -1.01, -2.86, 31.0, 47.76))
+('Mar13_14/Volume    _RESULTS.txt', (-3.55, -1.64, 0.27, -1.73, -2.84, 31.0, 44.65))
+('Mar13_14/% Chg(Open)_RESULTS.txt', (-8.51, -4.84, -1.18, 0.0, -2.88, 31.0, 45.54))
+('Mar13_14/DM Average (ADX) 14 Day_RESULTS.txt', (-9.16, -6.35, -3.55, -3.05, -2.85, 31.0, 47.83))
+('Mar13_14/Exchange_RESULTS.txt', (-10.18, -6.07, -1.96, -1.83, -2.86, 31.0, 47.78))

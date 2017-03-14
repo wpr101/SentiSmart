@@ -2,22 +2,16 @@ from googlefinance import getQuotes
 import pandas as pd
 import time
 
-path = 'Mar13_14/Experimental_Everything/'
+path = 'Mar13_14/LargeScreen/'
 file_name = 'Everything Mar-13-2017'
 bad_symbol_list = ['USLV']
 
 df = pd.read_csv( path + file_name + '.csv')
 
-#Sorting by a specific column
-#Volume column has 4 spaces after
-#df = df.sort_values('Volume    ')
-
 columns_list = list(df.columns.values)
 
-
+#Loop through all the columns of the csv
 for column in range(len(columns_list)-1):
-    #rate limit on Google
-    #time.sleep(5)
     print(columns_list[column])
     #Sort the data frame, biggest numbers first
     df = df.sort_values(columns_list[column], ascending=False)
@@ -34,6 +28,7 @@ for column in range(len(columns_list)-1):
         try:
             if (symbol_list[i] in bad_symbol_list):
                 continue
+            #rate limit on google, appears 2 per second is okay
             time.sleep(.5)
             quote = getQuotes(symbol_list[i])
             sell_price = quote[0]['LastTradeWithCurrency']
@@ -45,7 +40,8 @@ for column in range(len(columns_list)-1):
         except Exception:
             pass
             #print('bad symbol', symbol_list[i])
-          
+    
+    #Remove bad path file symbols      
     output_name = columns_list[column].replace('/', '')
     output_name = output_name.replace(u"\u00AE", '')
 

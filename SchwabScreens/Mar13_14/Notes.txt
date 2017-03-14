@@ -1,3 +1,5 @@
 Will sort a single scan on hundreds of columns to find out which provides the best return
 Issue with google rate limiting
 Now sorting by first five trades
+
+***MARKET CAP WAS MISSING FROM BASIC PE TECHNICALS SCREEN... ALLOWED A MICRO CAP BIG LOSER IN

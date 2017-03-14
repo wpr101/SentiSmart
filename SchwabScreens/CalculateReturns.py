@@ -7,20 +7,20 @@ import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.style.use('ggplot')
 
+MONTE_CARLO_SAMPLE_SIZE = 10000
+path = 'Mar13_14/LargeScreen/'
+results_data = {}
+
 def percent_change(startPoint, currentPoint):
     return ((float(currentPoint) - startPoint)/abs(startPoint))*100.00
 
+#calculate the average return for a specific range of trades
 def average_first_num(returns_list, start, end):
     average_first_five = 0
     for i in range(start,end):
         average_first_five += returns_list[i]
     average_first_five = average_first_five/(end-start)
     return(average_first_five)
-    
-
-MONTE_CARLO_SAMPLE_SIZE = 10000
-path = 'Mar13_14/'
-results_data = {}
 
 def calculate_returns(file_name):
     with open(file_name, "r") as f:
@@ -76,33 +76,23 @@ def calculate_returns(file_name):
         percent_winners = round(round(float(winners_count)/len(symbols_list),2) * 100)
         print('% winners', percent_winners)
 
-        #print(symbols_list)
-        #print(returns_list)
-        '''returns_list = [5, percent_change(17.18,16.49), percent_change(830.68,808.57),
-                        percent_change(69.24,75.59), percent_change(40.72,38.53),
-                        percent_change(26.17,25.10), percent_change(63.52,55.12),
-                        percent_change(89.77,88.49), percent_change(84.84,88.00),
-                        percent_change(120.52,115.33), percent_change(21.81,22.79)]'''
-
         sum_returns = 0
         for i in range(len(returns_list)):
             sum_returns += returns_list[i]
-            #print('sum',sum_returns)
-            #print('current',returns_list[i])
-            #print('')
+
         actual_return = sum_returns/len(returns_list)
         actual_return = round(actual_return,2)
         print('actual_return per trade', actual_return)
         variance = round(np.var(returns_list),2)
 
-
+        #create dictionary entry for data to write to file
         results_data[file_name] = (first_five_trades, first_ten_trades, five_ten_trades, last_five_trades,
                                     actual_return, percent_winners, variance )
 
-        
+        '''
         max_return = 0
         min_return = 0
-        '''for a in range(0,MONTE_CARLO_SAMPLE_SIZE):
+        for a in range(0,MONTE_CARLO_SAMPLE_SIZE):
             average_monte_carlo_return = 0
             monte_carlo_return = 0
             for i in range(len(returns_list)):
@@ -142,15 +132,11 @@ for file_name in os.listdir(path):
     if file_name.endswith("RESULTS.txt"): 
         calculate_returns(os.path.join(path, file_name))
 
-#Sort by first item in dictionary key, can double index into the tuple
+#Sort by first item in dictionary key, can double index into the tuple, i.e. t[1][3]
 results_data_sorted = sorted(results_data.items(), key=lambda t: t[1], reverse=True)
 
 text_file = open(path + "REPORT.txt", "w")
 text_file.write('Average index performance: ' + '\n\n')
-#text_file.write('FORMAT: scan_name, average_trade_return, accuracy, variance,' +  
-                    #'0-5 trades, 0-10 trades, 5-10 trades, last trades' + '\n\n')
-
-
 text_file.write('FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, ' + 
                 'average_trade_return, accuracy, variance,' + '\n\n')
 for scan in results_data_sorted:
@@ -158,7 +144,4 @@ for scan in results_data_sorted:
 
 text_file.close()
 
-
-
 plt.savefig(path + 'Results.png')
-
