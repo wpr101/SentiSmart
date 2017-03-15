@@ -2,8 +2,8 @@ from googlefinance import getQuotes
 import pandas as pd
 import time
 
-path = 'Mar13_14/LargeScreen/'
-file_name = 'Everything Mar-13-2017'
+path = 'Mar14_15/'
+file_name = 'BasicPE_Technicals Mar-14-2017'
 bad_symbol_list = ['USLV']
 
 df = pd.read_csv( path + file_name + '.csv')
@@ -29,7 +29,7 @@ for column in range(len(columns_list)-1):
             if (symbol_list[i] in bad_symbol_list):
                 continue
             #rate limit on google, appears 2 per second is okay
-            time.sleep(.51)
+            time.sleep(.55)
             quote = getQuotes(symbol_list[i])
             sell_price = quote[0]['LastTradeWithCurrency']
             index = quote[0]['Index']
