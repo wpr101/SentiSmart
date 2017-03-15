@@ -8,7 +8,7 @@ import matplotlib
 matplotlib.style.use('ggplot')
 
 MONTE_CARLO_SAMPLE_SIZE = 10000
-path = 'Mar13_14/LargeScreen/'
+path = 'Mar13_14/'
 results_data = {}
 
 def percent_change(startPoint, currentPoint):
@@ -139,6 +139,7 @@ text_file = open(path + "REPORT.txt", "w")
 text_file.write('Average index performance: ' + '\n\n')
 text_file.write('FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, ' + 
                 'average_trade_return, accuracy, variance,' + '\n\n')
+
 for scan in results_data_sorted:
     text_file.write(str(scan) + '\n')
 

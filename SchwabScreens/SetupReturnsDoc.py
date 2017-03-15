@@ -29,7 +29,7 @@ for column in range(len(columns_list)-1):
             if (symbol_list[i] in bad_symbol_list):
                 continue
             #rate limit on google, appears 2 per second is okay
-            time.sleep(.5)
+            time.sleep(.51)
             quote = getQuotes(symbol_list[i])
             sell_price = quote[0]['LastTradeWithCurrency']
             index = quote[0]['Index']

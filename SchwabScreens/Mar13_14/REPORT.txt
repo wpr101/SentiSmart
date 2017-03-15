@@ -1,4 +1,4 @@
-Average index performance: -0.26%
+Average index performance: 
 
 FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, average_trade_return, accuracy, variance,
 
