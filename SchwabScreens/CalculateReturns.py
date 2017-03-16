@@ -8,7 +8,7 @@ import matplotlib
 matplotlib.style.use('ggplot')
 
 MONTE_CARLO_SAMPLE_SIZE = 10000
-path = 'Mar15_16/BasicPE_Range_Technicals Mar-15-2017/'
+path = 'Mar15_16/Everything_PE/'
 results_data = {}
 
 def percent_change(startPoint, currentPoint):
