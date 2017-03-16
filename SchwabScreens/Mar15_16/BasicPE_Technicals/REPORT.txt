@@ -1,0 +1,21 @@
+Average index performance: 
+
+FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, average_trade_return, accuracy, variance,
+
+('Mar15_16/BasicPE_Technicals/% Chg from 5 day Avg Close_RESULTS.txt', (1.74, 1.03, 0.31, 0.98, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/Williams % R_RESULTS.txt', (1.57, 1.15, 0.73, -0.52, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/RSI 10 Day_RESULTS.txt', (1.24, 1.27, 1.3, 0.03, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/Symbol_RESULTS.txt', (1.23, 1.48, 1.72, 0.13, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/Exchange_RESULTS.txt', (1.07, 0.86, 0.64, 0.11, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/Volume    _RESULTS.txt', (1.05, 0.98, 0.9, 1.39, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/MACD _RESULTS.txt', (0.98, 1.01, 1.04, 1.2, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/Money Flow Percent_RESULTS.txt', (0.97, 1.0, 1.04, 0.38, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/% Chg(Open)_RESULTS.txt', (0.88, 0.64, 0.4, 1.27, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/DM Average (ADX) 14 Day_RESULTS.txt', (0.76, 0.87, 0.98, 0.78, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/% Chg of Range from Low_RESULTS.txt', (0.72, 1.03, 1.34, 1.17, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/EMA 15 Day_RESULTS.txt', (0.26, 0.63, 0.99, 1.23, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/Last Trade_RESULTS.txt', (0.26, 0.63, 0.99, 1.23, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/Bollinger Band(Middle)_RESULTS.txt', (0.26, 0.63, 0.99, 0.74, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/Daily Low Count_RESULTS.txt', (0.14, 0.42, 0.69, 0.88, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/PE (ttm)_RESULTS.txt', (-0.03, 0.27, 0.56, 1.65, 0.81, 80.0, 2.72))
+('Mar15_16/BasicPE_Technicals/Market Cap_RESULTS.txt', (-0.27, -0.23, -0.2, 0.95, 0.81, 80.0, 2.72))
