@@ -158,12 +158,17 @@ for directory in dir_list:
     text_file.close()
 
     plt.savefig(directory + 'Results.png')
+    plt.clf()
     #reset the data for next directory
     results_data = {}
 
+#Make a final summary report
 summary_file = open(path + "SUMMARY.txt", "w")
+summary_file.write('DOW daily performance: ' + '\n')
+summary_file.write('Nasdaq daily performance: ' + '\n\n')
 summary_file.write('FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, ' + 
                     'average_trade_return, accuracy, variance,' + '\n\n')
+summary_file.write('***Results are sorted by average_trade_return***' + '\n\n')
 
 #sort by average_trade_return which is t[1][4]
 summary_list_sorted = sorted(summary_list, key=lambda t: t[1][4], reverse=True)
