@@ -24,7 +24,7 @@ def average_first_num(returns_list, start, end):
 
 def calculate_returns(file_name):
     with open(file_name, "r") as f:
-        print('file_name', file_name)
+        #print('file_name', file_name)
         symbols_list = []
         returns_list = []
         winners_count = 0
@@ -41,7 +41,7 @@ def calculate_returns(file_name):
             symbols_list.append(symbol)
             returns_list.append(change)
 
-        print('num trades', len(symbols_list))
+        #print('num trades', len(symbols_list))
         equity_graph_list = []
         balance = 0
         position_size = 10000
@@ -58,23 +58,23 @@ def calculate_returns(file_name):
         '''plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.05),
           ncol=3, fancybox=True, shadow=True)'''
         
-        print('all returns', returns_list)
+        #print('all returns', returns_list)
 
         first_five_trades = round(average_first_num(returns_list, 0, 5),2)
         first_ten_trades = round(average_first_num(returns_list, 0, 10),2)
         five_ten_trades = round(average_first_num(returns_list, 5, 10),2)
         last_five_trades = round(average_first_num(returns_list, len(returns_list)-5, len(returns_list)),2)
-        print('average 0-5 trades', first_five_trades)
-        print('average 0-10 trades', first_ten_trades)
-        print('average 5-10 trades', five_ten_trades)
-        print('average last 5 trades', last_five_trades)
+        #print('average 0-5 trades', first_five_trades)
+        #print('average 0-10 trades', first_ten_trades)
+        #print('average 5-10 trades', five_ten_trades)
+        #print('average last 5 trades', last_five_trades)
         #Print first 5 results and average
 
 
         #print('num winners', winners_count)
         #print('num losers', losers_count)
         percent_winners = round(round(float(winners_count)/len(symbols_list),2) * 100)
-        print('% winners', percent_winners)
+        #print('% winners', percent_winners)
 
         sum_returns = 0
         for i in range(len(returns_list)):
@@ -82,7 +82,7 @@ def calculate_returns(file_name):
 
         actual_return = sum_returns/len(returns_list)
         actual_return = round(actual_return,2)
-        print('actual_return per trade', actual_return)
+        #print('actual_return per trade', actual_return)
         variance = round(np.var(returns_list),2)
 
         #create dictionary entry for data to write to file
@@ -126,7 +126,7 @@ def calculate_returns(file_name):
             random_sample = random_sample/len(returns_list)
             random_runs.append(round(random_sample,2))
         print("random runs", random_runs)'''
-        print('')
+        #print('')
 
 
 d=path
@@ -134,6 +134,7 @@ dir_list = [os.path.join(d,o) for o in os.listdir(d) if os.path.isdir(os.path.jo
 for i in range(len(dir_list)):
     dir_list[i] += '/'
 
+summary_list = []
 #Loop through all the folders in the directory containing txt results
 for directory in dir_list:
     print('directory', directory)
@@ -152,6 +153,24 @@ for directory in dir_list:
     for scan in results_data_sorted:
         text_file.write(str(scan) + '\n')
 
+    summary_list.append(results_data_sorted[0])
+
     text_file.close()
 
     plt.savefig(directory + 'Results.png')
+    #reset the data for next directory
+    results_data = {}
+
+summary_file = open(path + "SUMMARY.txt", "w")
+summary_file.write('FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, ' + 
+                    'average_trade_return, accuracy, variance,' + '\n\n')
+
+#sort by average_trade_return which is t[1][4]
+summary_list_sorted = sorted(summary_list, key=lambda t: t[1][4], reverse=True)
+
+for i in range(len(summary_list_sorted)):
+    summary_file.write(str(summary_list_sorted[i]) + '\n\n')
+summary_file.close()
+
+
+
