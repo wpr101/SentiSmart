@@ -9,6 +9,7 @@ matplotlib.style.use('ggplot')
 
 MONTE_CARLO_SAMPLE_SIZE = 10000
 TOP_NUM_COLUMNS = 15
+
 path = 'Mar16_17/'
 results_data = {}
 
@@ -25,7 +26,6 @@ def average_first_num(returns_list, start, end):
 
 def calculate_returns(file_name):
     with open(file_name, "r") as f:
-        #print('file_name', file_name)
         symbols_list = []
         returns_list = []
         winners_count = 0
@@ -42,7 +42,6 @@ def calculate_returns(file_name):
             symbols_list.append(symbol)
             returns_list.append(change)
 
-        #print('num trades', len(symbols_list))
         equity_graph_list = []
         balance = 0
         position_size = 10000
@@ -51,31 +50,19 @@ def calculate_returns(file_name):
             dollar_change = percent * position_size
             balance += dollar_change
             equity_graph_list.append(balance)
-        #print(equity_graph_list)
             
         plt.xlabel('trades')
         plt.ylabel('profit')
         plt.plot(equity_graph_list, label=file_name)
         '''plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.05),
           ncol=3, fancybox=True, shadow=True)'''
-        
-        #print('all returns', returns_list)
 
         first_five_trades = round(average_first_num(returns_list, 0, 5),2)
         first_ten_trades = round(average_first_num(returns_list, 0, 10),2)
         five_ten_trades = round(average_first_num(returns_list, 5, 10),2)
         last_five_trades = round(average_first_num(returns_list, len(returns_list)-5, len(returns_list)),2)
-        #print('average 0-5 trades', first_five_trades)
-        #print('average 0-10 trades', first_ten_trades)
-        #print('average 5-10 trades', five_ten_trades)
-        #print('average last 5 trades', last_five_trades)
-        #Print first 5 results and average
 
-
-        #print('num winners', winners_count)
-        #print('num losers', losers_count)
         percent_winners = round(round(float(winners_count)/len(symbols_list),2) * 100)
-        #print('% winners', percent_winners)
 
         sum_returns = 0
         for i in range(len(returns_list)):
@@ -83,7 +70,7 @@ def calculate_returns(file_name):
 
         actual_return = sum_returns/len(returns_list)
         actual_return = round(actual_return,2)
-        #print('actual_return per trade', actual_return)
+
         variance = round(np.var(returns_list),2)
 
         #create dictionary entry for data to write to file
@@ -127,7 +114,6 @@ def calculate_returns(file_name):
             random_sample = random_sample/len(returns_list)
             random_runs.append(round(random_sample,2))
         print("random runs", random_runs)'''
-        #print('')
 
 
 d=path
@@ -137,6 +123,7 @@ for i in range(len(dir_list)):
 
 summary_list = []
 column_performance = {}
+column_bad_performance = {}
 #Loop through all the folders in the directory containing txt results
 for directory in dir_list:
     print('directory', directory)
@@ -157,6 +144,18 @@ for directory in dir_list:
             column_performance[column_name_only] += 1
         else:
             column_performance[column_name_only] = 1
+
+    #loop through the worst performing 15 columns
+    for i in range(len(results_data_sorted) - TOP_NUM_COLUMNS, len(results_data_sorted)-1):
+        #remove the path to find column name
+        removed_path = results_data_sorted[i][0].split('/')[-1]
+        #remove the .txt extension to the file name only
+        column_name_only = removed_path.split('_')[0]
+
+        if (column_name_only in column_bad_performance):
+            column_bad_performance[column_name_only] += 1
+        else:
+            column_bad_performance[column_name_only] = 1
 
 
     text_file = open(directory + "REPORT.txt", "w")
@@ -192,13 +191,22 @@ summary_list_sorted = sorted(summary_list, key=lambda t: t[1][4], reverse=True)
 for i in range(len(summary_list_sorted)):
     summary_file.write(str(summary_list_sorted[i]) + '\n\n')
 
-summary_file.write('Top performing columns across daily scans' + '\n')
+summary_file.write('Top (' + str(TOP_NUM_COLUMNS) + ') performing columns across daily scans' + '\n')
 #Examine top performing columns
 sorted_column_performance = sorted(column_performance.items(), key=operator.itemgetter(1), reverse=True)
 for item in sorted_column_performance:
     #check which performance metrics show up more than once in top accross the scans
     if (item[1] > 1):
         summary_file.write(str(item) + '\n')
+
+summary_file.write('\n')
+summary_file.write('Worst (' + str(TOP_NUM_COLUMNS) + ') performing columns across daily scans' + '\n')
+bad_column_performance = sorted(column_bad_performance.items(), key=operator.itemgetter(1), reverse=True)
+for item in bad_column_performance:
+    #check which performance metrics show up more than once in top accross the scans
+    if (item[1] > 1):
+        summary_file.write(str(item) + '\n')
+
 
 summary_file.close()
 
