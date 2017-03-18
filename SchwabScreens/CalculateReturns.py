@@ -196,7 +196,7 @@ summary_file.write('Top (' + str(TOP_NUM_COLUMNS) + ') performing columns across
 sorted_column_performance = sorted(column_performance.items(), key=operator.itemgetter(1), reverse=True)
 for item in sorted_column_performance:
     #check which performance metrics show up more than once in top accross the scans
-    if (item[1] > 1):
+    if (item[1] > 2):
         summary_file.write(str(item) + '\n')
 
 summary_file.write('\n')
@@ -204,7 +204,7 @@ summary_file.write('Worst (' + str(TOP_NUM_COLUMNS) + ') performing columns acro
 bad_column_performance = sorted(column_bad_performance.items(), key=operator.itemgetter(1), reverse=True)
 for item in bad_column_performance:
     #check which performance metrics show up more than once in top accross the scans
-    if (item[1] > 1):
+    if (item[1] > 2):
         summary_file.write(str(item) + '\n')
 
 
