@@ -8,6 +8,7 @@ import matplotlib
 matplotlib.style.use('ggplot')
 
 MONTE_CARLO_SAMPLE_SIZE = 10000
+TOP_NUM_COLUMNS = 15
 path = 'Mar16_17/'
 results_data = {}
 
@@ -135,6 +136,7 @@ for i in range(len(dir_list)):
     dir_list[i] += '/'
 
 summary_list = []
+column_performance = {}
 #Loop through all the folders in the directory containing txt results
 for directory in dir_list:
     print('directory', directory)
@@ -144,6 +146,18 @@ for directory in dir_list:
 
     #Sort by first item in dictionary key, can double index into the tuple, i.e. t[1][3]
     results_data_sorted = sorted(results_data.items(), key=lambda t: t[1], reverse=True)
+
+    #loop through the top performing 15 columns
+    for i in range(TOP_NUM_COLUMNS):
+        #remove the path to find column name
+        removed_path = results_data_sorted[i][0].split('/')[-1]
+        #remove the .txt extension to the file name only
+        column_name_only = removed_path.split('_')[0]
+        if (column_name_only in column_performance):
+            column_performance[column_name_only] += 1
+        else:
+            column_performance[column_name_only] = 1
+
 
     text_file = open(directory + "REPORT.txt", "w")
     text_file.write('Average index performance: ' + '\n\n')
@@ -162,6 +176,7 @@ for directory in dir_list:
     #reset the data for next directory
     results_data = {}
 
+
 #Make a final summary report
 summary_file = open(path + "SUMMARY.txt", "w")
 summary_file.write('DOW daily performance: ' + '\n')
@@ -173,8 +188,18 @@ summary_file.write('***Results are sorted by average_trade_return***' + '\n\n')
 #sort by average_trade_return which is t[1][4]
 summary_list_sorted = sorted(summary_list, key=lambda t: t[1][4], reverse=True)
 
+
 for i in range(len(summary_list_sorted)):
     summary_file.write(str(summary_list_sorted[i]) + '\n\n')
+
+summary_file.write('Top performing columns across daily scans' + '\n')
+#Examine top performing columns
+sorted_column_performance = sorted(column_performance.items(), key=operator.itemgetter(1), reverse=True)
+for item in sorted_column_performance:
+    #check which performance metrics show up more than once in top accross the scans
+    if (item[1] > 1):
+        summary_file.write(str(item) + '\n')
+
 summary_file.close()
 
 
