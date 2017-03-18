@@ -10,7 +10,8 @@ matplotlib.style.use('ggplot')
 MONTE_CARLO_SAMPLE_SIZE = 10000
 TOP_NUM_COLUMNS = 15
 
-path = 'Mar16_17/'
+path = 'TEST/'
+scan_report_folder = 'Scan_Report/'
 results_data = {}
 
 def percent_change(startPoint, currentPoint):
@@ -157,8 +158,12 @@ for directory in dir_list:
         else:
             column_bad_performance[column_name_only] = 1
 
+    #make new directory for reporting about the scan
+    reports_directory = directory + scan_report_folder
+    if not os.path.exists(reports_directory):
+        os.makedirs(reports_directory)
 
-    text_file = open(directory + "REPORT.txt", "w")
+    text_file = open(reports_directory + "REPORT.txt", "w")
     text_file.write('Average index performance: ' + '\n\n')
     text_file.write('FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, ' + 
                     'average_trade_return, accuracy, variance,' + '\n\n')
@@ -170,7 +175,7 @@ for directory in dir_list:
 
     text_file.close()
 
-    plt.savefig(directory + 'Results.png')
+    plt.savefig(reports_directory + 'Results.png')
     plt.clf()
     #reset the data for next directory
     results_data = {}
