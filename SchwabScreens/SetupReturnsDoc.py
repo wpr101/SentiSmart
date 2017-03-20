@@ -6,12 +6,12 @@ import os
 
 QUOTE_SOURCE = 'GOOGLE' #or YAHOO
 
-path = 'TEST/'
+path = 'Mar20_21/'
 bad_symbol_list = ['USLV']
 symbol_price_map = {}
 
 for file_name in os.listdir(path):
-    if file_name.endswith(".csv"): 
+    if (file_name.endswith(".csv") and (not ('TRADING' in file_name))): 
         print(os.path.join(path, file_name))
 
         #df = pd.read_csv( path + file_name + '.csv')
