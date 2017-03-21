@@ -3,15 +3,15 @@ import os
 import operator
 
 file_name = 'TRADING Mar-21-2017.csv'
-path = 'Mar20_21/'
+path = 'Mar21_22/'
 column_match = {}
 
 df = pd.read_csv( os.path.join(path, file_name))
 
 columns_list = list(df.columns.values)
 
-#Loop through all the columns of the csv (skip first 3 columns)
-for column in range(3, len(columns_list)-1):
+#Loop through all the columns of the csv (skip first 7 columns)
+for column in range(7, len(columns_list)-1):
 
     #Sort the data frame, biggest numbers first
     sorted_df = df.sort_values(columns_list[column], ascending=False)

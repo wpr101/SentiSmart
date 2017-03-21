@@ -1,0 +1,44 @@
+DOW daily performance: 
+Nasdaq daily performance: 
+
+FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, average_trade_return, accuracy, variance,
+
+***Results are sorted by average_trade_return***
+
+('Mar20_21/Everything_PE_15_45/% Change_RESULTS.txt', (1.45, 0.58, -0.29, -2.88, -1.76, 24, 7.0))
+
+('Mar20_21/Everything_PE_GreaterZero/PE Ratio (Latest Actual)_RESULTS.txt', (0.24, -0.51, -1.25, -3.15, -2.0, 16, 4.2300000000000004))
+
+('Mar20_21/Everything_PE_MC2Bil+/Gap  _RESULTS.txt', (0.04, -0.39, -0.81, -3.49, -2.31, 12, 5.8099999999999996))
+
+('Mar20_21/Everything_NYSE/Description              _RESULTS.txt', (-0.13, -0.34, -0.54, -1.93, -2.35, 18, 8.0399999999999991))
+
+('Mar20_21/Everything/Symbol_RESULTS.txt', (-0.08, -1.42, -2.76, -2.02, -2.52, 18, 7.4199999999999999))
+
+('Mar20_21/Everything_PercentChange/% Chg of Range from High_RESULTS.txt', (-0.85, -1.6, -2.35, -6.31, -2.92, 15, 7.4100000000000001))
+
+('Mar20_21/Everything_NASDAQ/% Total Return (9 Mo)_RESULTS.txt', (-0.21, -1.81, -3.4, -3.13, -3.26, 12, 11.57))
+
+Top (15) performing columns across daily scans
+('Relative PE Ratio', 4)
+('PE Ratio (Latest Actual)', 4)
+('% Gap', 4)
+('PE (ttm)', 4)
+('% Chg of Range from High', 3)
+('Revenue', 3)
+('SER', 3)
+('Symbol', 3)
+('% Vol Over 6 Mo Avg Vol', 3)
+('% Change', 3)
+('% Vol Over 5 Day Avg Vol', 3)
+
+Worst (15) performing columns across daily scans
+('% Chg from 6 Mo Avg Close', 4)
+('% Total Return (3 Mo)', 4)
+('PS Ratio', 3)
+('% Total Return (9 Mo)', 3)
+('S&P STARS', 3)
+('Relative Strength', 3)
+('Chg(Open)', 3)
+('Momentum 60 Day', 3)
+('% Total Return (6 Mo)', 3)
