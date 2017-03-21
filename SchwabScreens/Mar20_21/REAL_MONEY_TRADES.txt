@@ -1,3 +1,13 @@
 BUY PLCE 44 shares @ 116.12
 BUY STL 208 shares @ 24.14
 BUY CORE 154 shares @ 32.56
+
+SELL
+SELL
+SELL
+
+
+NOTES:
+Small Cap 600 was -0.62% on the day (March 20), and all three were in the small cap 600. 
+Each stock was down more than the index. Seems that the trades will depend
+heavily on the performance for March 21.

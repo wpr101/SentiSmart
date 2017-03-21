@@ -11,7 +11,8 @@ bad_symbol_list = ['USLV']
 symbol_price_map = {}
 
 for file_name in os.listdir(path):
-    if (file_name.endswith(".csv") and (not ('TRADING' in file_name))): 
+    #if (file_name.endswith(".csv") and (not ('TRADING' in file_name))): 
+    if file_name.endswith(".csv"):
         print(os.path.join(path, file_name))
 
         #df = pd.read_csv( path + file_name + '.csv')

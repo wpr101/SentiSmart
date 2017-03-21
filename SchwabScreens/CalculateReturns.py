@@ -10,7 +10,7 @@ matplotlib.style.use('ggplot')
 MONTE_CARLO_SAMPLE_SIZE = 10000
 TOP_NUM_COLUMNS = 15
 
-path = 'TEST/'
+path = 'Mar20_21/'
 scan_report_folder = 'Scan_Report/'
 results_data = {}
 
@@ -118,7 +118,8 @@ def calculate_returns(file_name):
 
 
 d=path
-dir_list = [os.path.join(d,o) for o in os.listdir(d) if os.path.isdir(os.path.join(d,o))]
+#Complicated statement to get all the directories except the TRADING directory
+dir_list = [os.path.join(d,o) for o in os.listdir(d) if (os.path.isdir(os.path.join(d,o)) and (not ('TRADING' in os.path.join(d,o))))]
 for i in range(len(dir_list)):
     dir_list[i] += '/'
 
