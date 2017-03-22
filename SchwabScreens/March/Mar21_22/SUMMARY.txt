@@ -1,0 +1,44 @@
+DOW daily performance: 
+Nasdaq daily performance: 
+
+FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, average_trade_return, accuracy, variance,
+
+***Results are sorted by average_trade_return***
+
+('March/Mar21_22/Everything_PE_GreaterZero/% Total Return (YTD1)_RESULTS.txt', (1.55, -0.03, -1.62, -0.32, -0.71, 24, 2.1299999999999999))
+
+('March/Mar21_22/Everything_PE_MC2Bil+/Avg Vol 1 Mo_RESULTS.txt', (0.98, 0.26, -0.46, -1.53, -0.82, 22, 1.6000000000000001))
+
+('March/Mar21_22/Everything_NYSE/EMA 60 Day_RESULTS.txt', (1.01, 0.1, -0.81, -1.54, -0.83, 33, 2.98))
+
+('March/Mar21_22/Everything_PE_15_45/% Recommend Sell_RESULTS.txt', (0.67, -0.04, -0.76, -0.87, -0.98, 22, 1.6499999999999999))
+
+('March/Mar21_22/Everything_PercentChange/% Total Return (9 Mo)_RESULTS.txt', (1.52, 0.26, -0.99, -2.39, -1.0, 32, 4.8099999999999996))
+
+('March/Mar21_22/Everything/EMA 100 Day_RESULTS.txt', (1.19, -0.02, -1.23, -1.79, -1.19, 27, 4.3899999999999997))
+
+('March/Mar21_22/Everything_NASDAQ/Avg $ Vol 5 Day_RESULTS.txt', (0.59, 0.1, -0.39, -2.01, -1.29, 24, 5.2999999999999998))
+
+Top (15) performing columns across daily scans
+('Avg Vol 6 Mo', 6)
+('% Recommend Sell', 4)
+('Avg Vol 20 Day', 4)
+('Recommendation Num', 4)
+('EMA 120 Day', 4)
+('Avg Vol 1 Mo', 4)
+('[SMA 15 Day - Last Trade] (%)', 3)
+('SMA 200 Day', 3)
+('EPS (Latest)', 3)
+('EMA 100 Day', 3)
+('% Total Return (9 Mo)', 3)
+('% Total Return (YTD1)', 3)
+('Avg Vol 5 Day', 3)
+
+Worst (15) performing columns across daily scans
+('% Chg from 1 Mo Avg Close', 4)
+('Low 52 Wk - Daily Low', 4)
+('% Chg from 5 day Avg Close', 3)
+('% Chg from 20 day Avg Close', 3)
+('DM (DI+) Positive 14 Day', 3)
+('Ask Size', 3)
+('Williams % R', 3)

@@ -16,3 +16,21 @@ Factors we definitely want:
 
 3/3
 Screen6 was the clear winner again. 
+-------------------------------------------
+
+March 22
+Want to avoid stocks in a sector which is trending down.
+Banking was down on the day heavily, so look for companies
+in other sector.
+
+Also avoid companies which go down on spike in volume.
+Bought into a company which had a downgrade.
+
+AVOID:
+1) Sector the company is in trading down
+2) There is news surrounding the company
+3) Heavy spike in volume for drop
+
+WANT:
+1) Steady volume throughout day, trending down
+2) Sector is not in focus
