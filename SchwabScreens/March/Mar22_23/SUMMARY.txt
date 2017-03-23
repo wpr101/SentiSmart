@@ -1,0 +1,38 @@
+DOW daily performance: 
+Nasdaq daily performance: 
+
+FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, average_trade_return, accuracy, variance,
+
+***Results are sorted by average_trade_return***
+
+('March/Mar22_23/Everything_NYSE/PE (ttm)_RESULTS.txt', (7.11, 4.41, 1.7, 0.78, 2.36, 82, 13.4))
+
+('March/Mar22_23/Everything/PE (ttm)_RESULTS.txt', (6.46, 3.77, 1.08, -0.52, 1.88, 72, 14.73))
+
+('March/Mar22_23/Everything_PE_GreaterZero/Industry                                           _RESULTS.txt', (6.52, 4.08, 1.65, 0.98, 1.84, 76, 10.640000000000001))
+
+('March/Mar22_23/Everything_PercentChange/PE Ratio (Latest Actual)_RESULTS.txt', (6.33, 3.85, 1.38, 2.04, 1.67, 64, 13.73))
+
+('March/Mar22_23/Everything_NASDAQ/% Total Return (9 Mo)_RESULTS.txt', (5.43, 3.14, 0.85, 1.5, 1.45, 62, 11.789999999999999))
+
+('March/Mar22_23/Everything_PE_MC2Bil+/% 5 Yr Projected Growth Rate_RESULTS.txt', (3.15, 2.54, 1.94, 0.83, 1.1, 86, 2.8599999999999999))
+
+Top (15) performing columns across daily scans
+('[SMA 15 Day - Last Trade] (%)', 4)
+('% Vol Over 20 Day Avg Vol', 4)
+('% Vol Over 1 Mo Avg Vol', 4)
+('DM (DI-) Negative 14 Day', 4)
+('% Vol Over 5 Day Avg Vol', 4)
+('Low 52 Wk - Daily Low', 3)
+('PE Ratio (Latest Actual)', 3)
+('% Vol Over YTD Avg Vol', 3)
+('PE Ratio (Estimated)', 3)
+('PE (ttm)', 3)
+
+Worst (15) performing columns across daily scans
+('Avg Vol 5 Day', 4)
+('% Total Return (YTD3)', 3)
+('Sector                    ', 3)
+('% Total Return (YTD2)', 3)
+('Avg Vol YTD', 3)
+('Avg Vol 6 Mo', 3)
