@@ -4,9 +4,9 @@ import pandas as pd
 import time
 import os
 
-QUOTE_SOURCE = 'YAHOO' #or YAHOO
+QUOTE_SOURCE = 'GOOGLE' #or YAHOO
 
-path = 'March/Mar22_23/'
+path = 'March/Mar27_28/'
 bad_symbol_list = ['USLV']
 symbol_price_map = {}
 

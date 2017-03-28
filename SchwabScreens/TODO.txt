@@ -1,0 +1,1 @@
+Remove commas from Google prices; issue caused by Priceline with a price over 1000
