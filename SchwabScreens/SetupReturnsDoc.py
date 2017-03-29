@@ -6,7 +6,7 @@ import os
 
 QUOTE_SOURCE = 'GOOGLE' #or YAHOO
 
-path = 'March/Mar27_28/'
+path = 'March/Mar28_29/'
 bad_symbol_list = ['USLV']
 symbol_price_map = {}
 
@@ -31,6 +31,9 @@ for file_name in os.listdir(path):
             if (QUOTE_SOURCE == 'GOOGLE'):
                 try:
                     sell_price = getQuotes(symbol_list[i])[0]['LastTradePrice']
+                    #check for large prices which contain a comma
+                    if (',' in sell_price):
+                        sell_price = sell_price.replace(',', '')
                     index = getQuotes(symbol_list[i])[0]['Index']
                 except Exception:
                     print('****BAD SYMBOL****')
