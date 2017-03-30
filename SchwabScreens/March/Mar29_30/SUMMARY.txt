@@ -1,0 +1,71 @@
+DOW daily performance: 
+Nasdaq daily performance: 
+
+FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, average_trade_return, accuracy, variance,
+
+***Results are sorted by average_trade_return***
+
+('March/Mar29_30/Sort_RSI30_Bottom/Sub-Industry                         _RESULTS.txt', (3.71, 2.31, 0.92, -0.42, 1.11, 73, 4.71))
+
+('March/Mar29_30/NASDAQ_PE/Dividend Yield_RESULTS.txt', (2.84, 2.17, 1.5, 1.18, 1.05, 79, 3.8300000000000001))
+
+('March/Mar29_30/Sort_RSI10_Bottom/Description              _RESULTS.txt', (3.05, 1.84, 0.63, 0.78, 0.98, 78, 2.5099999999999998))
+
+('March/Mar29_30/Sort_RSI10FromClose_Bottom/% Recommend Buy_RESULTS.txt', (2.16, 1.63, 1.11, 0.9, 0.74, 68, 2.1499999999999999))
+
+('March/Mar29_30/NYSE_PE/Beta Value_RESULTS.txt', (2.28, 1.74, 1.19, 0.04, 0.72, 69, 1.79))
+
+('March/Mar29_30/PE_15_45/S&P STARS_RESULTS.txt', (2.05, 2.08, 2.11, 0.97, 0.72, 73, 3.73))
+
+('March/Mar29_30/PE_MC2Bil+/Chg(Open)_RESULTS.txt', (1.8, 1.47, 1.15, -0.55, 0.55, 70, 1.9399999999999999))
+
+('March/Mar29_30/PE_GreaterZero/Recommendation Avg_RESULTS.txt', (1.74, 0.91, 0.09, 0.91, 0.41, 63, 3.2799999999999998))
+
+('March/Mar29_30/Sort_RSI30_Top/Recommendation Avg_RESULTS.txt', (1.27, 0.4, -0.46, -0.82, -0.19, 42, 2.4900000000000002))
+
+('March/Mar29_30/Sort_RSI10_Top/% Total Return (YTD1)_RESULTS.txt', (1.04, 0.29, -0.46, -2.66, -0.32, 37, 2.3300000000000001))
+
+Top (15) performing columns across daily scans
+('Recommendation Avg', 7)
+('[SMA 15 Day - Last Trade] (%)', 6)
+('Earnings', 5)
+('% Recommend Hold', 5)
+('Net Income', 5)
+('% Total Return (YTD1)', 5)
+('Low 52 Wk - Daily Low', 4)
+('% Total Return (6 Mo)', 4)
+('Avg Vol 6 Mo', 4)
+('SER', 4)
+('% Total Return (9 Mo)', 3)
+('Bid Size', 3)
+('In S&P Small Cap 600', 3)
+('Low-Last Trade', 3)
+('% Total Return (YTD2)', 3)
+('Shares outstanding', 3)
+('Ask Size', 3)
+('% 5 Yr Projected Growth Rate', 3)
+('% Recommend Buy', 3)
+('In S&P Mid Cap 400', 3)
+('% Gap', 3)
+('S&P STARS', 3)
+('Beta Value', 3)
+('% Margin', 3)
+
+Worst (15) performing columns across daily scans
+('% Chg from 20 day Avg Close', 8)
+('% Chg from 1 Mo Avg Close', 7)
+('% Total Return (YTD0)', 5)
+('RSI from Close 30 Day', 4)
+('DM (DI+) Positive 14 Day', 4)
+('% Chg from YTD Avg Close', 4)
+('High 52 Wk - Daily High', 4)
+('Relative Strength', 4)
+('RSI 50 Day', 3)
+('Revenue', 3)
+("% Vol Over Yesterday's Vol", 3)
+('Avg Vol 6 Mo', 3)
+('Avg Vol 1 Mo', 3)
+('RSI from Close 50 Day', 3)
+('RSI 10 Day', 3)
+('Avg Vol 20 Day', 3)
+('RSI 30 Day', 3)
