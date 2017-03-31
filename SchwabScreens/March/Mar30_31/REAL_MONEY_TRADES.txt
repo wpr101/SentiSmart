@@ -1,2 +1,7 @@
 SAIC 54 shares at 74.25
 INTU 43 shares at 116.55
+LULU 99 shares at 50.74
+
+SAIC sell at 74.93
+INTU sell at 115.90
+LULU sell at 51.55
