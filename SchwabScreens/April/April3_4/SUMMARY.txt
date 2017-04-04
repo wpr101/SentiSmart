@@ -1,0 +1,40 @@
+DOW daily performance: 
+Nasdaq daily performance: 
+
+FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, average_trade_return, accuracy, variance,
+
+***Results are sorted by average_trade_return***
+
+('April/April3_4/Sort_RSI10FromClose_Bottom/In S&P Mid Cap 400_RESULTS.txt', (0.78, 0.41, 0.05, -0.56, -0.21, 44, 1.1100000000000001))
+
+('April/April3_4/Sort_RSI10_Bottom/% Recommend Buy - Hold_RESULTS.txt', (1.07, 0.37, -0.33, -0.36, -0.22, 46, 1.29))
+
+('April/April3_4/Sort_RSI30_Bottom/DM Average (ADX) 14 Day_RESULTS.txt', (0.83, -0.0, -0.84, -0.75, -0.32, 38, 1.7))
+
+('April/April3_4/Sort_RSI10_NYSE_Bottom/RSI 30 Day_RESULTS.txt', (0.82, 0.1, -0.62, -0.39, -0.41, 42, 1.8100000000000001))
+
+('April/April3_4/NASDAQ_PE/Dividend_RESULTS.txt', (0.66, -0.28, -1.22, 0.26, -0.74, 27, 2.6000000000000001))
+
+('April/April3_4/PE_GreaterZero/% Chg of Range from Low_RESULTS.txt', (1.23, -0.19, -1.61, -2.15, -1.07, 26, 3.0699999999999998))
+
+('April/April3_4/PE_15_45/% Chg(Open)_RESULTS.txt', (0.32, -0.24, -0.79, -1.4, -1.08, 22, 2.3900000000000001))
+
+('April/April3_4/NYSE_PE/Avg Vol YTD_RESULTS.txt', (0.55, -0.47, -1.5, -1.44, -1.32, 18, 2.52))
+
+Top (15) performing columns across daily scans
+('Exchange', 5)
+('Low-Last Trade', 4)
+('% Chg of Range from High', 4)
+('% Recommend Hold - Sell', 3)
+('% Margin', 3)
+('% Recommend Buy', 3)
+('PS Ratio', 3)
+('% Chg of Range from Low', 3)
+
+Worst (15) performing columns across daily scans
+('High 52 Wk - Daily High', 5)
+('Revenue', 4)
+('Money Flow', 3)
+('Recommendation Num', 3)
+('% Total Return (3 Mo)', 3)
+('% Vol Over 6 Mo Avg Vol', 3)
