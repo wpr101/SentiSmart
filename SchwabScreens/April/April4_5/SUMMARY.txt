@@ -1,0 +1,43 @@
+DOW daily performance: 
+Nasdaq daily performance: 
+
+FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, average_trade_return, accuracy, variance,
+
+***Results are sorted by average_trade_return***
+
+('April/April4_5/Sort_RSI30_Bottom/Momentum 40 Day_RESULTS.txt', (3.06, 0.92, -1.22, 0.34, 0.38, 52, 2.5800000000000001))
+
+('April/April4_5/NYSE_PE/High 52 Wk - Daily High_RESULTS.txt', (2.61, 1.41, 0.22, 0.07, 0.28, 52, 2.7400000000000002))
+
+('April/April4_5/Sort_RSI10_Bottom/DM Average (ADX) 14 Day_RESULTS.txt', (1.44, 0.26, -0.92, -0.58, 0.09, 53, 1.5900000000000001))
+
+('April/April4_5/PE_15_45/Low 52 Wk - Daily Low_RESULTS.txt', (2.64, 0.99, -0.66, -1.55, -0.04, 56, 4.9100000000000001))
+
+('April/April4_5/PE_GreaterZero/% Chg from 5 day Avg Close_RESULTS.txt', (2.32, 1.15, -0.03, -3.46, -0.08, 45, 5.2199999999999998))
+
+('April/April4_5/Sort_RSI10_NYSE_Bottom/DM Average (ADX) 14 Day_RESULTS.txt', (1.15, -0.03, -1.22, -0.62, -0.1, 45, 1.72))
+
+('April/April4_5/NASDAQ_PE/RSI from Close 10 Day_RESULTS.txt', (1.37, 0.53, -0.31, -0.39, -0.26, 53, 5.1399999999999997))
+
+Top (15) performing columns across daily scans
+('In S&P 500', 4)
+('Avg Vol 20 Day', 3)
+('High 52 Wk - Daily High', 3)
+('EPS (Yr-1)', 3)
+('PE Ratio (Estimated)', 3)
+('PE (ttm)', 3)
+('Avg Vol 6 Mo', 3)
+('DM (DI+) Positive 14 Day', 3)
+('% Chg from 1 Mo Avg Close', 3)
+('Relative PE Ratio', 3)
+('% Chg from 20 day Avg Close', 3)
+('Avg Vol 1 Mo', 3)
+('Avg Vol 5 Day', 3)
+
+Worst (15) performing columns across daily scans
+('% Total Return (6 Mo)', 5)
+('Beta Value', 3)
+('% Total Return (9 Mo)', 3)
+('% Chg from 6 Mo Avg Close', 3)
+('% Total Return (YTD2)', 3)
+('% Total Return (YTD3)', 3)

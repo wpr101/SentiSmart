@@ -6,7 +6,7 @@ import os
 
 QUOTE_SOURCE = 'GOOGLE' #or YAHOO
 
-path = 'April/April3_4/'
+path = 'April/April4_5/'
 bad_symbol_list = ['USLV']
 symbol_price_map = {}
 
