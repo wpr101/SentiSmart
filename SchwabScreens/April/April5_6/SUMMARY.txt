@@ -1,0 +1,43 @@
+DOW daily performance: 
+Nasdaq daily performance: 
+
+FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, average_trade_return, accuracy, variance,
+
+***Results are sorted by average_trade_return***
+
+('April/April5_6/NASDAQ_PE/SER_RESULTS.txt', (3.17, 2.21, 1.25, 0.53, 0.13, 44, 4.7400000000000002))
+
+('April/April5_6/Sort_DM_Negative14_Bottom/Daily Low Count_RESULTS.txt', (0.88, 0.12, -0.64, -0.71, -0.01, 47, 1.01))
+
+('April/April5_6/Sort_RSI30_Bottom/Relative PE Ratio_RESULTS.txt', (3.39, 1.79, 0.19, -1.72, -0.05, 35, 4.7199999999999998))
+
+('April/April5_6/Sort_RSI10_Bottom/Avg Vol 5 Day_RESULTS.txt', (1.81, 0.18, -1.45, -2.34, -0.42, 32, 4.0800000000000001))
+
+('April/April5_6/Sort_WilliamsR_Bottom/In S&P Small Cap 600_RESULTS.txt', (1.22, -0.4, -2.03, 0.59, -0.42, 40, 2.7000000000000002))
+
+('April/April5_6/Sort_Momentum20Day_Bottom/DM (DI-) Negative 14 Day_RESULTS.txt', (0.75, -0.33, -1.4, -0.15, -0.49, 33, 1.6399999999999999))
+
+('April/April5_6/NYSE_PE/% Chg from 6 Mo Avg Close_RESULTS.txt', (2.16, 0.9, -0.37, -0.84, -0.5, 50, 5.1200000000000001))
+
+('April/April5_6/PE_GreaterZero/S&P Quality Ranking_RESULTS.txt', (2.04, 1.11, 0.18, 0.32, -0.6, 48, 6.3499999999999996))
+
+Top (15) performing columns across daily scans
+('SER', 5)
+('% Change', 4)
+('RSI from Close 10 Day', 3)
+('Momentum 60 Day', 3)
+('Avg Vol 5 Day', 3)
+('% D  ', 3)
+('Momentum from Close 20 Day', 3)
+
+Worst (15) performing columns across daily scans
+('Dividend Yield', 6)
+('Ask Size', 4)
+('Avg Vol 5 Day', 4)
+('% Recommend Hold - Sell', 4)
+('Recommendation Avg', 4)
+('EMA 100 Day', 3)
+('% 5 Yr Projected Growth Rate', 3)
+('% Total Return (YTD1)', 3)
+('% Total Return (9 Mo)', 3)
+('DM Average (ADX) 14 Day', 3)

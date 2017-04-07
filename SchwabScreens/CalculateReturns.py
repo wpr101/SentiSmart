@@ -10,7 +10,7 @@ matplotlib.style.use('ggplot')
 MONTE_CARLO_SAMPLE_SIZE = 10000
 TOP_NUM_COLUMNS = 15
 
-path = 'April/April4_5/'
+path = 'April/April5_6/'
 scan_report_folder = 'Scan_Report/'
 results_data = {}
 

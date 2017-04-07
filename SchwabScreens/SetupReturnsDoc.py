@@ -6,7 +6,7 @@ import os
 
 QUOTE_SOURCE = 'GOOGLE' #or YAHOO
 
-path = 'April/April4_5/'
+path = 'April/April5_6/'
 bad_symbol_list = ['USLV']
 symbol_price_map = {}
 
@@ -42,8 +42,8 @@ for file_name in os.listdir(path):
                 #Google rate limit, approximately 2 quotes per second allowed
                 time.sleep(.55)
 
-
-                if (sell_price is None):
+                #zero price can result from an acquisition or other odd events
+                if ((sell_price is None) or (sell_price == "0.0000")):
                     print('****BAD SYMBOL****')
                     bad_symbol_list.append(symbol_list[i])
                     continue
