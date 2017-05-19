@@ -1,0 +1,23 @@
+DOW daily performance: 
+Nasdaq daily performance: 
+
+FORMAT: scan_name, 0-5 trades, 0-10 trades, 5-10 trades, last 5 trades, average_trade_return, accuracy, variance,
+
+***Results are sorted by average_trade_return***
+
+('May/May17_19/Sort_WilliamsR_Bottom/Change_RESULTS.txt', (2.72, 1.76, 0.79, 1.82, 1.17, 82, 3.0899999999999999))
+
+('May/May17_19/Sort_RSI30_Bottom/% Chg of Range from High_RESULTS.txt', (2.41, 1.44, 0.47, 0.85, 0.88, 64, 2.2400000000000002))
+
+('May/May17_19/Sort_RSI10_Bottom/SER_RESULTS.txt', (2.28, 1.39, 0.51, -1.57, 0.6, 62, 3.0600000000000001))
+
+("May/May17_19/Sort_Momentum20Day_Bottom/% Vol Over Yesterday's Vol_RESULTS.txt", (2.34, 1.52, 0.7, 0.3, 0.5, 59, 2.23))
+
+Top (15) performing columns across daily scans
+('Momentum from Close 20 Day', 3)
+("% Vol Over Yesterday's Vol", 3)
+
+Worst (15) performing columns across daily scans
+('Daily High Count', 3)
+('Revenue', 3)
+('Shares outstanding', 3)
