@@ -18,7 +18,6 @@ def get_coin_data(coin):
             items.append(key)
         i += 1
         
-
     j = 0
     while j < len(items):
         coin_data[items[j]] = items[j+1]
@@ -31,7 +30,6 @@ for i in coins:
     coin = coin_market.ticker(i)
     coin = coin.decode("utf-8")
     coin_data = get_coin_data(coin)
-    print(coin_data['id'], coin_data['rank'])
-
-
-    
+    for key, value in coin_data.items():
+        print (key, value)
+    print('') 
