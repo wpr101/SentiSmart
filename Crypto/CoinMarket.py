@@ -1,9 +1,19 @@
+import json
 from coinmarketcap import Market
 coin_market = Market()
+json_data = coin_market.ticker().decode('utf-8')
+data = json.loads(json_data)
+
+for coin in data:
+    print(coin['name'])
 
 
+
+
+
+#HACK
 #returns a dictionary with data for that coin
-def get_coin_data(coin):
+'''def get_coin_data(coin):
     coin_data = {}
 
     i = 0
@@ -32,4 +42,4 @@ for i in coins:
     coin_data = get_coin_data(coin)
     for key, value in coin_data.items():
         print (key, value)
-    print('') 
+    print('') '''
