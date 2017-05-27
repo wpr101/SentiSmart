@@ -5,7 +5,12 @@ json_data = coin_market.ticker().decode('utf-8')
 data = json.loads(json_data)
 
 for coin in data:
-    print(coin['name'])
+    if coin['percent_change_1h'] is not None:
+        #check for volume over $1 million dollars
+        if float(coin['24h_volume_usd']) > 1000000:
+            percent_change_1h = float(coin['percent_change_1h'])
+            if percent_change_1h > 10:
+                print (coin['name'])
 
 
 
